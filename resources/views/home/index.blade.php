@@ -65,7 +65,7 @@ body {
     <div class="page__hd" style="padding: 40px;">
         <div class="icon ion-person avatar noavatar"></div>
         <div class="userinfo">
-            {{ $user->getNickname }}
+            username
         </div>
     </div>
 
