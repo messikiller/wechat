@@ -38,9 +38,15 @@ class WechatController extends Controller
                 ],
             ],
         ];
+        $app->menu->create($buttons);
+
+        $app->server->push(function ($message) {
+            if ($message['MsgType'] == 'text' && $message['content'] == '借钱') {
+                return '想借钱，找林工！';
+            }
+        });
 
         $response = $app->server->serve();
-        $app->menu->create($buttons);
 
         return $response;
     }
