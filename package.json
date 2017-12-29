@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "ionicons201": "^1.0.0",
         "weui": "^1.1.2"
     }
 }

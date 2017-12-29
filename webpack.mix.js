@@ -14,8 +14,11 @@ let mix = require('laravel-mix');
 mix
     .js('resources/assets/js/app.js', 'public/js')
     .styles([
-        'node_modules/weui/dist/style/weui.min.css'
+        'node_modules/weui/dist/style/weui.min.css',
+        'node_modules/ionicons201/css/ionicons.min.css',
+        'resources/assets/css/home.css',
     ], 'public/css/home.css')
+    .copy('node_modules/ionicons201/fonts/*', 'public/fonts/')
 
 ;
    // .sass('resources/assets/sass/app.scss', 'public/css');
