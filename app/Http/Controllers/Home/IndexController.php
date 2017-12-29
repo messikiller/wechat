@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return 'here is home index';
+        return view('home.index')
     }
 }
