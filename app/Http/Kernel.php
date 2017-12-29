@@ -42,9 +42,6 @@ class Kernel extends HttpKernel
             'bindings',
         ],
 
-        'wechat' => [
-            \App\Http\Middleware\CheckWechatAuth::class,
-        ]
     ];
 
     /**
@@ -61,6 +58,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        
+
+        'wechat' => \App\Http\Middleware\CheckWechatAuth::class,
     ];
 }
