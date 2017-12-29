@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::any('/wechat', 'WechatController@serve');
+
+Route::namespace('Home')->group(function () {
+    Route::get('/home/index', 'IndexController@index')->name('home.index');
+});

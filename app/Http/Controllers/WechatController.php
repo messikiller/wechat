@@ -11,38 +11,12 @@ class WechatController extends Controller
     {
         $app = EasyWeChat::officialAccount();
 
-        $buttons = [
-            [
-                "type" => "click",
-                "name" => "今日歌曲",
-                "key"  => "V1001_TODAY_MUSIC"
-            ],
-            [
-                "name"       => "菜单",
-                "sub_button" => [
-                    [
-                        "type" => "view",
-                        "name" => "搜索",
-                        "url"  => "http://www.soso.com/"
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "视频",
-                        "url"  => "http://v.qq.com/"
-                    ],
-                    [
-                        "type" => "click",
-                        "name" => "赞一下我们",
-                        "key" => "V1001_GOOD"
-                    ],
-                ],
-            ],
-        ];
-        $app->menu->create($buttons);
+        $menu = config('define.menu');
+        $app->menu->create($menu);
 
         $app->server->push(function ($message) {
             if ($message['MsgType'] == 'text' && $message['Content'] == '借钱') {
-                return '想借钱，找林工！';
+                return route('home.index');
             }
         });
 
