@@ -18,6 +18,6 @@ Route::get('/', function () {
 Route::any('/wechat',                'WechatController@serve');
 Route::any('/wechat/oauth/callback', 'WechatController@oauthCallback');
 
-Route::namespace('Home')->group(['middleware' => ['check_wechat_auth']], function () {
+Route::namespace('Home')->group(['middleware' => ['wechat']], function () {
     Route::get('/home/index', 'IndexController@index')->name('home.index');
 });
