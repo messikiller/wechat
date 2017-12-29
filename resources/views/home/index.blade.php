@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-<title>WeUI</title>
+<title>SonoScape</title>
 <!-- 引入 WeUI -->
 <link rel="stylesheet" href="{{ mix('css/home.css') }}">
 <style media="screen">
@@ -65,7 +65,7 @@ body {
     <div class="page__hd" style="padding: 40px;">
         <div class="icon ion-person avatar noavatar"></div>
         <div class="userinfo">
-            username
+            {{ $user->getNickname }}
         </div>
     </div>
 
@@ -139,6 +139,10 @@ body {
                 Button
             </p>
         </a>
+    </div>
+
+    <div class="weui-footer">
+        <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
     </div>
 
 </body>

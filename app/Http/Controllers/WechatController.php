@@ -24,4 +24,17 @@ class WechatController extends Controller
 
         return $response;
     }
+
+    public function oauthCallback(Request $request)
+    {
+        $app   = EasyWeChat::officialAccount();
+        $oauth = $app->oauth;
+        $user  = $oauth->user();
+
+        session()->put(config('define.wechat_session_key'), $user);
+
+        $target = session('redirect_url', '/home/index');
+
+        return redirect($target);
+    }
 }
