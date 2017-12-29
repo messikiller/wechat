@@ -14,7 +14,7 @@ let mix = require('laravel-mix');
 mix
     .js('resources/assets/js/app.js', 'public/js')
     .styles([
-        'node_modules/weui/dist/style'
+        'node_modules/weui/dist/style/weui.min.css'
     ], 'public/css/home.css')
 
 ;
