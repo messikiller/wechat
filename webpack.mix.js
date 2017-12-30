@@ -15,8 +15,7 @@ mix
     .js('resources/assets/js/app.js', 'public/js')
     .styles([
         'node_modules/weui/dist/style/weui.min.css',
-        'node_modules/ionicons201/css/ionicons.min.css',
-        'resources/assets/css/home_page.css',
+        'node_modules/ionicons201/css/ionicons.min.css'
     ], 'public/css/home.css')
     .copy('node_modules/ionicons201/fonts/*', 'public/fonts/')
 
