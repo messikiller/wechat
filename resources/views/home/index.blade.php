@@ -8,14 +8,14 @@
     </div>
 </div>
 
-<div class="bar back-gray">功能</div>
+<div class="bar back-gray">{{ __('home.index.functions') }}</div>
 <div class="weui-grids">
     <a href="{{ route('member.profile') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-person primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Profile
+            {{ __('home.index.profile') }}
         </p>
     </a>
     <a href="javascript:;" class="weui-grid">
@@ -23,7 +23,7 @@
             <i class="icon ion-chatbox-working primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Advice
+            {{ __('home.index.advice') }}
         </p>
     </a>
     <a href="javascript:;" class="weui-grid">
