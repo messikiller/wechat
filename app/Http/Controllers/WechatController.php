@@ -14,12 +14,6 @@ class WechatController extends Controller
         $menu = config('define.menu');
         $app->menu->create($menu);
 
-        $app->server->push(function ($message) {
-            if ($message['MsgType'] == 'text' && $message['Content'] == '借钱') {
-                return route('home.index');
-            }
-        });
-
         $response = $app->server->serve();
 
         return $response;
@@ -33,7 +27,7 @@ class WechatController extends Controller
 
         session()->put(config('define.wechat_session_key'), $user);
 
-        $target = session('redirect_url', '/home/index');
+        $target = session('redirect_url', route('home.index'));
 
         return redirect($target);
     }

@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="page__hd" style="padding: 40px;">
-    {{-- <div class="icon ion-person avatar noavatar"></div> --}}
     <img src="{{ optional($user)->getAvatar()  }}" alt="avatar" class="avatar">
     <div class="userinfo">
         {{ optional($user)->getNickname() }}
