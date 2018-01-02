@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $user = session(config('define.wechat_session_key'));
+        $user = session(config('define.wechat_user_session_key'));
         return view('home.index', compact('user'));
     }
 }
