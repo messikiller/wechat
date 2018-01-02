@@ -25,7 +25,7 @@ class WechatController extends Controller
         $oauth = $app->oauth;
         $user  = $oauth->user();
 
-        session()->put(config('define.wechat_session_key'), $user);
+        session()->put(config('define.wechat_user_session_key'), $user);
 
         $target = session('redirect_url', route('home.index'));
 
