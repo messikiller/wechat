@@ -40,6 +40,10 @@ body {
     line-height: 56px;
 }
 
+.footer {
+    margin-top: 20px;
+}
+
 .wechat-color {
     color: #1aad19;
 }
@@ -67,7 +71,7 @@ body {
 
     @yield('content')
 
-    <div class="weui-footer">
+    <div class="weui-footer footer">
         <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
     </div>
 
