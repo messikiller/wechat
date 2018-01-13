@@ -11,8 +11,8 @@ class WechatController extends Controller
     {
         $app = EasyWeChat::officialAccount();
 
-        $menu = config('define.menu');
-        $app->menu->create($menu);
+        //$menu = config('define.menu');
+        //$app->menu->create($menu);
 
         $response = $app->server->serve();
 
