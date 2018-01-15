@@ -12,7 +12,10 @@ class MemberController extends HomeController
 {
     public function profile()
     {
-        return view('home.member.profile');
+        $member_id = Auth::user()->id;
+        $member    = Member::find($member_id);
+
+        return view('home.member.profile', compact('member'));
     }
 
     public function updateProfile(Request $request)

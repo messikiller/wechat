@@ -12,7 +12,7 @@
                 <label for="" class="weui-label">角色</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="type">
+                <select class="weui-select" name="type" value="{{ $member->type }}">
                     <option></option>
                     @foreach (config('define.member.type') as $type)
                         <option value="{{ $type['value'] }}">{{ $type['desc'] }}</option>
@@ -24,7 +24,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入姓名" name="nickname"/>
+                <input class="weui-input" type="text" placeholder="请输入姓名" value="{{ $member->nickname }}" name="nickname"/>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                 <label for="" class="weui-label">性别</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="sex">
+                <select class="weui-select" name="sex" value="{{ $member->sex }}">
                     <option></option>
                     <option value="1">男</option>
                     <option value="2">女</option>
@@ -44,7 +44,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入合法的电子邮箱" name="mail"/>
+                <input class="weui-input" type="text" placeholder="请输入合法的电子邮箱" name="mail" value="{{ $member->mail }}"/>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
                 <label class="weui-label">手机号</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="tel" placeholder="请输入" name="mobile"/>
+                <input class="weui-input" type="tel" placeholder="请输入" name="mobile" value="{{ $member->mobile }}"/>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
                 <label for="" class="weui-label">国家/地区</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="region_id">
+                <select class="weui-select" name="region_id" value="{{ $member->region_id }}">
                     <option></option>
                     <option value="1">中国</option>
                     <option value="2">美国</option>
@@ -76,7 +76,7 @@
                 <label class="weui-label">公司</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="company_id">
+                <select class="weui-select" name="company_id" value="{{ $member->company_id }}">
                     <option></option>
                     <option value="1">中国</option>
                     <option value="2">美国</option>
@@ -90,7 +90,7 @@
                 <label for="" class="weui-label">医院</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="hospital_id">
+                <select class="weui-select" name="hospital_id" value="{{ $member->hospital_id }}">
                     <option></option>
                     <option value="1">中国</option>
                     <option value="2">美国</option>
