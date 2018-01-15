@@ -33,7 +33,7 @@ class WechatController extends Controller
             $member = Member::create(['wechat_id' => $wechat_id, 'created_at' => time()]);
         }
 
-        $member->put('wechat', $user);
+        $member->setAttribute('wechat', $user);
         Auth::set($member);
 
         $target = session('redirect_url', route('home.index'));
