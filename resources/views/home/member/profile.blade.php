@@ -12,10 +12,11 @@
                 <label for="" class="weui-label">角色</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="region_id">
+                <select class="weui-select" name="type">
                     <option></option>
-                    <option value="1">我是医生</option>
-                    <option value="2">我是代理商</option>
+                    @foreach (config('define.member.type') as $type)
+                        <option value="{{ $type['value'] }}">{{ $type['desc'] }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
