@@ -69,11 +69,13 @@ body {
 </head>
 <body>
 
-    @yield('content')
+@yield('content')
 
-    <div class="weui-footer footer">
-        <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
-    </div>
+<div class="weui-footer footer">
+    <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
+</div>
+
+@yield('script')
 
 </body>
 </html>

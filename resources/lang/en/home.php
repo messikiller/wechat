@@ -1,8 +1,9 @@
 <?php
 return [
     'index' => [
-        'functions' => 'Functions',
+        'functions' => 'Function',
         'profile'   => 'Profile',
         'advice'    => 'Advice',
+        'member'    => 'Member'
     ],
 ];

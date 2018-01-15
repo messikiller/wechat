@@ -1,6 +1,6 @@
 <?php
 return [
-    'wechat_user_session_key' => 'wechat_user',
+    'user_session_key' => 'user',
     'menu' => [
         [
             "type" => "click",
