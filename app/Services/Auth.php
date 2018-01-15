@@ -11,7 +11,7 @@ class Auth
 
     public static function wechat()
     {
-        return optional(session(config('define.user_session_key')))->wechat;
+        return self::user()->wechat;
     }
 
     public static function has()
@@ -26,8 +26,8 @@ class Auth
 
     public static function reload()
     {
-        $user = self::user();
-        $wechat_id = $user->wechat_id;
+        $user = self::wechat();
+        $wechat_id = $user->getId();
 
         $member = Member::where('wechat_id', '=', $wechat_id)->first();
         $member->setAttribute('wechat', $user);
