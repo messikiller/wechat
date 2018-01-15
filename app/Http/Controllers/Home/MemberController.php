@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use Validator;
+use App\Services\Auth;
 use App\Models\Member;
 
 class MemberController extends HomeController
@@ -52,7 +53,7 @@ class MemberController extends HomeController
             ]);
         }
 
-        $wechat_id = $this->getWechatUser()->getId();
+        $wechat_id = Auth::wechat()->getId();
 
         $member = Member::where('wechat_id', '=', $wechat_id)->first();
         if (empty($member))
