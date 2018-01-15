@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use EasyWeChat;
 use App\Services\Auth;
-use Member;
+use App\Models\Member;
 
 class WechatController extends Controller
 {
