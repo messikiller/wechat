@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Services\Auth;
 
-class IndexController extends Controller
+class IndexController extends HomeController
 {
     public function index()
     {
-        $user = session(config('define.wechat_user_session_key'));
+        $user = Auth::wechat();
         return view('home.index', compact('user'));
     }
 }

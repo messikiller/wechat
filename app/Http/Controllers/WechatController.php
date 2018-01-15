@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use EasyWeChat;
+use App\Services\Auth;
+use Member;
 
 class WechatController extends Controller
 {
@@ -11,8 +13,8 @@ class WechatController extends Controller
     {
         $app = EasyWeChat::officialAccount();
 
-        //$menu = config('define.menu');
-        //$app->menu->create($menu);
+        // $menu = config('define.menu');
+        // $app->menu->create($menu);
 
         $response = $app->server->serve();
 
@@ -25,7 +27,14 @@ class WechatController extends Controller
         $oauth = $app->oauth;
         $user  = $oauth->user();
 
-        session()->put(config('define.wechat_user_session_key'), $user);
+        $wechat_id = $user->getId();
+        $member = Member::where('wechat_id', '=', $wechat_id)->first();
+        if (empty($member)) {
+            $member = Member::create(['wechat_id' => $wechat_id, 'created_at' => time()]);
+        }
+
+        $member->put('wechat', $user);
+        Auth::set($member);
 
         $target = session('redirect_url', route('home.index'));
 

@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use EasyWeChat;
+use App\Services\Auth;
 
 class CheckWechatAuth
 {
@@ -16,7 +17,7 @@ class CheckWechatAuth
      */
     public function handle($request, Closure $next)
     {
-        if (! App()->isLocal() && empty(session(config('define.wechat_user_session_key'))))
+        if (! App()->isLocal() && ! Auth::has())
         {
             session()->put('redirect_url', $request->url());
             $app = EasyWeChat::officialAccount();
