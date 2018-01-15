@@ -90,6 +90,8 @@ class MemberController extends HomeController
             ]);
         }
 
+        Auth::reload();
+
         return view('home.common.message', [
             'msg_type'         => 'success',
             'title'            => 'Success',
