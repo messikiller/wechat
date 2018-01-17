@@ -75,6 +75,7 @@ body {
     <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
 </div>
 
+<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 @yield('script')
 
 </body>
