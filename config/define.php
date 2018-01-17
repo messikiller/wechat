@@ -31,8 +31,8 @@ return [
 
     'member' => [
         'type' => [
-            'doctor'   => ['value' => 0, 'desc' => '代理商'],
-            'provider' => ['value' => 1, 'desc' => '医生'],
+            'provider' => ['value' => 0, 'desc' => '医生'],
+            'doctor'   => ['value' => 1, 'desc' => '代理商'],
         ],
     ],
 
