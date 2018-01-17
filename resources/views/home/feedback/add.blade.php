@@ -48,7 +48,7 @@
 @section('script')
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript">
-new Vue({
+var vm = new Vue({
     el: '#app',
     mounted: function () {
         wx.config({!! $wx_config !!});
