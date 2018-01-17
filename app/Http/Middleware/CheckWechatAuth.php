@@ -17,7 +17,7 @@ class CheckWechatAuth
      */
     public function handle($request, Closure $next)
     {
-        if (! App()->isLocal() && ! Auth::has())
+        if (env('ENABLE_WECHAT_AUTH', true) && ! Auth::has())
         {
             session()->put('redirect_url', $request->url());
             $app = EasyWeChat::officialAccount();
