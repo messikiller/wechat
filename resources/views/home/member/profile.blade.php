@@ -15,7 +15,7 @@
                 <select class="weui-select" name="type">
                     <option></option>
                     @foreach (config('define.member.type') as $type)
-                        <option value="{{ $type['value'] }}" {{ $type['value'] == $member->type ? 'selected="selected"' : '' }}>{{ $type['desc'] }}</option>
+                        <option value="{{ $type['value'] }}" {{ $member->type == $type['value']  ? 'selected="selected"' : '' }}>{{ $type['desc'] }}</option>
                     @endforeach
                 </select>
             </div>
