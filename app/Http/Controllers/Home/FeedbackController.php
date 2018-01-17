@@ -17,8 +17,8 @@ class FeedbackController extends HomeController
 
     public function add()
     {
-        $js_config = EasyWeChat::officialAccount()->jssdk->buildConfig(['scanQRCode'], true);
-        return view('home.feedback.add');
+        $wx_config = EasyWeChat::officialAccount()->jssdk->setUrl(env('APP_URL'))->buildConfig(['scanQRCode'], true);
+        return view('home.feedback.add', compact('wx_config'));
     }
 
     public function handleAdd(Request $request)
