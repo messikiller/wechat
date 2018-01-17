@@ -39,12 +39,12 @@
 <div class="bar back-gray">{{ __('home.index.functions') }}</div>
 <div class="weui-grids">
 
-    <a href="javascript:;" class="weui-grid">
+    <a href={{ route('feedback.add') }} class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-chatbox-working primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Advise
+            Feedback
         </p>
     </a>
     <a href="javascript:;" class="weui-grid">

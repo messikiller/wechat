@@ -35,4 +35,12 @@ return [
             'provider' => ['value' => 1, 'desc' => '医生'],
         ],
     ],
+
+    'feedback' => [
+        'type' => [
+            'unknown' => ['value' => 0, 'desc' => '未知'],
+            'soft'    => ['value' => 1, 'desc' => '软件故障'],
+            'hard'    => ['value' => 2, 'desc' => '硬件故障'],
+        ],
+    ],
 ];

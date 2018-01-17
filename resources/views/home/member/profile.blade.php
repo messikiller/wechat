@@ -9,7 +9,7 @@
 
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">角色</label>
+                <label class="weui-label">角色</label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="type">
