@@ -8,14 +8,14 @@
     </div>
 </div>
 
-<div class="bar back-gray">{{ __('home.index.member') }}</div>
+<div class="bar back-gray">会员中心</div>
 <div class="weui-grids">
     <a href="{{ route('member.profile') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-person primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            {{ __('home.index.profile') }}
+            个人资料
         </p>
     </a>
     <a href="{{ route('feedback.ofMe') }}" class="weui-grid">
@@ -23,7 +23,7 @@
             <i class="icon ion-chatbubble-working primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Advice
+            我的反馈
         </p>
     </a>
     <a href="javascript:;" class="weui-grid">
@@ -31,12 +31,12 @@
             <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Setting
+            系统设置
         </p>
     </a>
 </div>
 
-<div class="bar back-gray">{{ __('home.index.functions') }}</div>
+<div class="bar back-gray">功能</div>
 <div class="weui-grids">
 
     <a href={{ route('feedback.add') }} class="weui-grid">
@@ -44,7 +44,7 @@
             <i class="icon ion-chatbox-working primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Feedback
+        提交反馈
         </p>
     </a>
     <a href="javascript:;" class="weui-grid">
@@ -52,7 +52,7 @@
             <i class="icon ion-archive primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            Download
+            下载专区
         </p>
     </a>
     <a href="javascript:;" class="weui-grid">
@@ -60,7 +60,7 @@
             <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            About
+            联系我们
         </p>
     </a>
 </div>

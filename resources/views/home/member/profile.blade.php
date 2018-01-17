@@ -33,7 +33,6 @@
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="sex">
-                    <option></option>
                     <option value="1" {{ $member->sex == 1 ? 'selected="selected"' : '' }}>男</option>
                     <option value="2" {{ $member->sex == 2 ? 'selected="selected"' : '' }}>女</option>
                 </select>
