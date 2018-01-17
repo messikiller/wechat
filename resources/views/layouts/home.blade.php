@@ -67,7 +67,7 @@ body {
 }
 </style>
 </head>
-<body>
+<body id="app">
 
 @yield('content')
 
