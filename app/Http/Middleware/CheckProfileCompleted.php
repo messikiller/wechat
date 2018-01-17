@@ -16,7 +16,7 @@ class CheckProfileCompleted
      */
     public function handle($request, Closure $next)
     {
-        if (! App()->isLocal() && ! Auth::user()->is_completed) {
+        if (env('ENABLE_PROFILE_CHECK', true) && ! Auth::user()->is_completed) {
             return response()->view('home.common.message', [
                 'msg_type'         => 'info',
                 'title'            => 'Forbidden',
