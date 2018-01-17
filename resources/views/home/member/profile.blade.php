@@ -12,10 +12,10 @@
                 <label for="" class="weui-label">角色</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="type" value="{{ $member->type }}">
+                <select class="weui-select" name="type">
                     <option></option>
                     @foreach (config('define.member.type') as $type)
-                        <option value="{{ $type['value'] }}">{{ $type['desc'] }}</option>
+                        <option value="{{ $type['value'] }}" {{ $type['value'] == $member->type ? 'selected="selected"' : '' }}>{{ $type['desc'] }}</option>
                     @endforeach
                 </select>
             </div>
@@ -33,10 +33,10 @@
                 <label for="" class="weui-label">性别</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="sex" value="{{ $member->sex }}">
+                <select class="weui-select" name="sex">
                     <option></option>
-                    <option value="1">男</option>
-                    <option value="2">女</option>
+                    <option value="1" {{ $member->sex == 1 ? 'selected="selected"' : '' }}>男</option>
+                    <option value="2" {{ $member->sex == 2 ? 'selected="selected"' : '' }}>女</option>
                 </select>
             </div>
         </div>
@@ -62,11 +62,11 @@
                 <label for="" class="weui-label">国家/地区</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="region_id" value="{{ $member->region_id }}">
+                <select class="weui-select" name="region_id">
                     <option></option>
-                    <option value="1">中国</option>
-                    <option value="2">美国</option>
-                    <option value="3">英国</option>
+                    <option value="1" {{ $member->region_id == 1 ? 'selected="selected"' : '' }}>中国</option>
+                    <option value="2" {{ $member->region_id == 2 ? 'selected="selected"' : '' }}>美国</option>
+                    <option value="3" {{ $member->region_id == 3 ? 'selected="selected"' : '' }}>英国</option>
                 </select>
             </div>
         </div>
@@ -76,11 +76,11 @@
                 <label class="weui-label">公司</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="company_id" value="{{ $member->company_id }}">
+                <select class="weui-select" name="company_id">
                     <option></option>
-                    <option value="1">中国</option>
-                    <option value="2">美国</option>
-                    <option value="3">英国</option>
+                    <option value="1" {{ $member->company_id == 1 ? 'selected="selected"' : '' }}>中国</option>
+                    <option value="2" {{ $member->company_id == 2 ? 'selected="selected"' : '' }}>美国</option>
+                    <option value="3" {{ $member->company_id == 3 ? 'selected="selected"' : '' }}>英国</option>
                 </select>
             </div>
         </div>
@@ -92,9 +92,9 @@
             <div class="weui-cell__bd">
                 <select class="weui-select" name="hospital_id" value="{{ $member->hospital_id }}">
                     <option></option>
-                    <option value="1">中国</option>
-                    <option value="2">美国</option>
-                    <option value="3">英国</option>
+                    <option value="1" {{ $member->hospital_id == 1 ? 'selected="selected"' : '' }}>中国</option>
+                    <option value="2" {{ $member->hospital_id == 2 ? 'selected="selected"' : '' }}>美国</option>
+                    <option value="3" {{ $member->hospital_id == 3 ? 'selected="selected"' : '' }}>英国</option>
                 </select>
             </div>
         </div>
