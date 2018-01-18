@@ -3,9 +3,7 @@
 @section('content')
 
 <form action="{{ url()->current() }}" method="post">
-
-
-
+    {{ csrf_fields() }}
     <div class="weui-cells__title bar">请填写报修信息</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_vcode">
