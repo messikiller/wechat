@@ -8,7 +8,7 @@
 <title>SonoScape</title>
 <link rel="stylesheet" href="{{ mix('css/home.css') }}">
 <style media="screen">
-html, body {
+html, body, #app {
     height: 100%;
 }
 
@@ -69,13 +69,15 @@ body {
 }
 </style>
 </head>
-<body id="app">
+<body>
+    <div id="app">
 
-@yield('content')
+        @yield('content')
 
-<div class="weui-footer footer">
-    <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
-</div>
+        <div class="weui-footer footer">
+            <p class="weui-footer__text">Copyright &copy; 2002-2018 SonoScape co. Ltd</p>
+        </div>
+    </div>
 
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 @yield('script')
