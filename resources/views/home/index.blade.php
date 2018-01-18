@@ -2,9 +2,12 @@
 
 @section('content')
 <div class="page__hd" style="padding: 40px;">
-    <img src="{{ optional($user)->getAvatar()  }}" alt="avatar" class="avatar">
+    <img src="{{ optional($wechat)->getAvatar()  }}" alt="avatar" class="avatar">
     <div class="userinfo">
-        {{ empty($user) ? 'unknown' : optional($user)->getNickname() }}
+        {{ empty($wechat) ? 'unknown' : optional($wechat)->getNickname() }}
+        @if (! $user->is_completed)
+            <span class="weui-badge">未完善</span>
+        @endif
     </div>
 </div>
 

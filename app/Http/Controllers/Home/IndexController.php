@@ -10,7 +10,8 @@ class IndexController extends HomeController
 {
     public function index()
     {
-        $user = Auth::wechat();
-        return view('home.index', compact('user'));
+        $user   = Auth::user();
+        $wechat = Auth::wechat();
+        return view('home.index', compact('user', 'wechat'));
     }
 }
