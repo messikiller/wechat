@@ -21,14 +21,14 @@ class CustomerServiceController extends HomeController
         $kf_wechat_id = $request->input('kf_wechat_id', false);
         $wechat_id    = Auth::user()->wechat_id;
 
-        if (! $open_id) {
+        if (! $kf_wechat_id) {
             return back();
         }
 
         $app = EasyWeChat::officialAccount();
-        $app->customer_service_session->create($kf_wechat_id, $wechat_id);
+        return $app->customer_service_session->create($kf_wechat_id, $wechat_id);
 
-        return $app->server->serve();
+        // return $app->server->serve();
     }
 
     public function close(Request $request)
