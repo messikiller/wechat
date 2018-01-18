@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
+use EasyWeChat;
 use App\Services\Auth;
 
 class IndexController extends HomeController

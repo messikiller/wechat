@@ -27,6 +27,9 @@ Route::namespace('Home')->middleware('wechat')->group(function () {
     Route::get('/feedback/add',   'FeedbackController@add')->name('feedback.add');
     Route::get('/feedback/of/me', 'FeedbackController@ofMe')->name('feedback.ofMe');
 
+    Route::get('customer/service/list', 'CustomerService@list')->name('customerService.list');
+    Route::get('customer/service/open', 'CustomerService@open')->name('customerService.open');
+
     Route::get('/common/success', function () {
         return view('home.common.message', [
             'msg_type' => 'success',
