@@ -80,7 +80,6 @@ body {
     </div>
 
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
-<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 @yield('script')
 
 </body>
