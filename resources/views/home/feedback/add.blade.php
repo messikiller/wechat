@@ -46,7 +46,6 @@
 @endsection
 
 @section('script')
-<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript">
 var vm = new Vue({
     el: '#app',
@@ -58,13 +57,13 @@ var vm = new Vue({
     },
     methods: {
         clickScanBtn: function () {
-            var _refs = this.$refs;
+            var _snInput = this.$refs.snInput;
             wx.scanQRCode({
                 desc: 'Scan SonoScape SN QRCode',
-                needResult: 0,
+                needResult: 1,
                 scanType: ["qrCode"],
                 success: function (res) {
-                   _refs.snInput.value = res.resultStr;
+                   _snInput.value = res.resultStr;
                 },
                 error: function (res) {
                     alert('Error');
