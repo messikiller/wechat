@@ -50,7 +50,7 @@
 <script type="text/javascript">
 var vm = new Vue({
     el: '#app',
-    mounted: function () {
+    created: function () {
         wx.config({!! $wx_config !!});
     },
     data: {
@@ -58,7 +58,6 @@ var vm = new Vue({
     },
     methods: {
         clickScanBtn: function () {
-            console.log('1111');
             wx.scanQRCode({
                 desc: 'scanQRCode desc',
                 needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
