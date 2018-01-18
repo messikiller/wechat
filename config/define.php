@@ -42,5 +42,9 @@ return [
             'soft'    => ['value' => 1, 'desc' => '软件故障'],
             'hard'    => ['value' => 2, 'desc' => '硬件故障'],
         ],
+        'status' => [
+            'processing' => ['value' => 0, 'desc' => '处理中'],
+            'finished'   => ['value' => 1, 'desc' => '已完成'],
+        ]
     ],
 ];

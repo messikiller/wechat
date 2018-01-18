@@ -58,7 +58,7 @@
             下载专区
         </p>
     </a>
-    <a href="{{ route('customerService.list') }}" class="weui-grid">
+    <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
         </div>

@@ -2,6 +2,10 @@
 
 @section('content')
 
+<form action="{{ url()->current() }}" method="post">
+
+
+
     <div class="weui-cells__title bar">请填写报修信息</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_vcode">
@@ -9,7 +13,7 @@
                 <label class="weui-label">SN</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="tel" placeholder="请输入机器SN" ref="snInput">
+                <input class="weui-input" type="tel" placeholder="请输入机器SN" ref="snInput" name="sn">
             </div>
             <div class="weui-cell__ft">
                 <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
@@ -34,14 +38,16 @@
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell">
             <div class="weui-cell__bd">
-                <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
+                <textarea class="weui-textarea" placeholder="请输入文本" rows="3" name="description"></textarea>
             </div>
         </div>
     </div>
 
     <div class="weui-btn-area">
-        <a class="weui-btn weui-btn_primary" href="javascript:">确定</a>
+        <button type="submit" class="weui-btn weui-btn_primary">Submit</button>
     </div>
+
+</form>
 
 @endsection
 
