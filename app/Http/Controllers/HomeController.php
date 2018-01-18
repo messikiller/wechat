@@ -7,5 +7,8 @@ use App\Services\Auth;
 
 class HomeController extends Controller
 {
-    
+    public function __construct()
+    {
+        
+    }
 }

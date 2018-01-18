@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('content')
-<div class="page__hd" style="padding: 40px;">
+<div class="page__hd" style="padding: 40px;background-image: url('/img/sonoscape.jpg');background-size: auto 100%;">
     <img src="{{ optional($wechat)->getAvatar()  }}" alt="avatar" class="avatar">
     <div class="userinfo">
         {{ empty($wechat) ? 'unknown' : optional($wechat)->getNickname() }}
