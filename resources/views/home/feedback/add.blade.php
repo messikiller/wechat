@@ -12,7 +12,7 @@
                 <input class="weui-input" type="tel" placeholder="请输入机器SN" ref="snInput">
             </div>
             <div class="weui-cell__ft">
-                <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn">扫一扫</a>
+                <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
             </div>
         </div>
     </div>
