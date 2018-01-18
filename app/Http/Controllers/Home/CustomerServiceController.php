@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
+use App\Services\Auth;
 use EasyWeChat;
 
 class CustomerServiceController extends HomeController
@@ -17,14 +18,15 @@ class CustomerServiceController extends HomeController
 
     public function open(Request $request)
     {
-        $open_id = $request->input('open_id', false);
+        $kf_wechat_id = $request->input('kf_wechat_id', false);
+        $wechat_id    = Auth::user()->wechat_id;
 
         if (! $open_id) {
             return back();
         }
 
         $app = EasyWeChat::officialAccount();
-        $app->customer_service_session->create('test1@test', $open_id);
+        $app->customer_service_session->create($kf_wechat_id, $wechat_id);
 
         return $app->server->serve();
     }
