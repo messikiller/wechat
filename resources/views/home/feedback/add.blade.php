@@ -9,7 +9,7 @@
                 <label class="weui-label">SN</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="tel" placeholder="请输入机器SN">
+                <input class="weui-input" type="tel" placeholder="请输入机器SN" ref="snInput">
             </div>
             <div class="weui-cell__ft">
                 <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn">扫一扫</a>
@@ -59,17 +59,15 @@ var vm = new Vue({
     methods: {
         clickScanBtn: function () {
             wx.scanQRCode({
-                desc: 'scanQRCode desc',
-                needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-                scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                desc: 'scan SonoScape SN QRCode',
+                needResult: 0,
+                scanType: ["qrCode","barCode"],
                 success: function (res) {
-                   // 回调
+                   this.$refs.snInput.value = res;
                 },
-                error: function(res){
-                      if(res.errMsg.indexOf('function_not_exist') > 0){
-                           alert('版本过低请升级')
-                        }
-                 }
+                error: function (res) {
+                    alert('Error');
+                }
             });
         }
     }
