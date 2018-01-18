@@ -58,12 +58,13 @@ var vm = new Vue({
     },
     methods: {
         clickScanBtn: function () {
+            var _refs = this.$refs;
             wx.scanQRCode({
-                desc: 'scan SonoScape SN QRCode',
+                desc: 'Scan SonoScape SN QRCode',
                 needResult: 0,
-                scanType: ["qrCode","barCode"],
+                scanType: ["qrCode"],
                 success: function (res) {
-                   this.$refs.snInput.value = res;
+                   _refs.snInput.value = res.resultStr;
                 },
                 error: function (res) {
                     alert('Error');
