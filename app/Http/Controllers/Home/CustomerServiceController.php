@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use EasyWeChat;
 
-class CustomerServiceController extends Controller
+class CustomerServiceController extends HomeController
 {
     public function list()
     {
