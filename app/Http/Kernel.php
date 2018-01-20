@@ -61,5 +61,7 @@ class Kernel extends HttpKernel
 
         'wechat' => \App\Http\Middleware\CheckWechatAuth::class,
         'checkProfileCompleted' => \App\Http\Middleware\CheckProfileCompleted::class,
+
+        'checkAdminLogin' => \App\Http\Middleware\CheckAdminLogin::class,
     ];
 }

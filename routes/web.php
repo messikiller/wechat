@@ -38,3 +38,11 @@ Route::namespace('Home')->middleware('wechat')->group(function () {
         ]);
     });
 });
+
+Route::get('/admin/login', 'Admin\AuthController@login')->name('admin.login');
+Route::post('/admin/login', 'Admin\AuthController@check')->name('admin.login');
+Route::get('/admin/logout', 'Admin\AuthController@logout')->name('admin.logout');
+
+Route::namespace('Admin')->middleware('checkAdminLogin')->group(function () {
+    Route::get('/admin/index', 'IndexController@index')->name('admin.index.index');
+});

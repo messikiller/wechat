@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Privilege;
 
 class PrivilegeGroup extends Model
 {
@@ -10,4 +11,9 @@ class PrivilegeGroup extends Model
     protected $primaryKey = 'id';
 
     public $timestamps = false;
+
+    public function privileges()
+    {
+        return $this->hasMany(Privilege::class, 'privilege_group_id', 'id');
+    }
 }
