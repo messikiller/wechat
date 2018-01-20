@@ -23,7 +23,7 @@
             <i-col span="3" v-show="showLeft" class="layout-menu-left">
                 <i-menu active-name="1" theme="dark" width="auto" accordion>
                     <div class="layout-logo-left" style="text-align:center;">
-                        <Icon type="ios-gear" size="22"></Icon>&ensp;{{ config('admin.app_title') }}
+                        <Icon type="ios-gear" size="22"></Icon>&ensp;{{ config('admin.app.title') }}
                     </div>
 
                     @foreach ($tree as $menu)
@@ -70,7 +70,7 @@
                                         </template>
                                         <a href="#" target="sonoscape"><Menu-item name="1-1">个人中心</Menu-item></a>
                                         <a href="#" target="sonoscape"><Menu-item name="1-2">重置密码</Menu-item></a>
-                                        <a href="#"><Menu-item name="1-3">退出系统</Menu-item></a>
+                                        <a href="/admin/logout"><Menu-item name="1-3">退出系统</Menu-item></a>
                                     </Submenu>
                                 </div>
                                 <i-button

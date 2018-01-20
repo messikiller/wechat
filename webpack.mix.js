@@ -23,9 +23,20 @@ mix
 
     // begin admin pages assets
     .styles([
-        'resources/assets/css/admin_layout.js'
+        'resources/assets/css/admin_layout.css'
     ], 'public/css/admin_layout.css')
+    .styles([
+        'semantic/dist/semantic.min.css',
+        'resources/assets/css/admin.css'
+    ], 'public/css/admin.css')
     .js('resources/assets/js/admin.js', 'public/js/admin.js')
+    .scripts([
+        'node_modules/jquery/dist/jquery.min.js',
+        'semantic/dist/semantic.min.js',
+        'public/js/admin.js'
+    ], 'public/js/admin.js')
+    .copy('node_modules/semantic-ui/dist/themes/', 'public/css/themes/')
+
 
 ;
    // .sass('resources/assets/sass/app.scss', 'public/css');

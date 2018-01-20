@@ -45,4 +45,8 @@ Route::get('/admin/logout', 'Admin\AuthController@logout')->name('admin.logout')
 
 Route::namespace('Admin')->middleware('checkAdminLogin')->group(function () {
     Route::get('/admin/index', 'IndexController@index')->name('admin.index.index');
+
+    Route::get('/admin/user/list', 'UserController@list')->name('admin.user.list');
+    Route::get('/admin/user/add', 'UserController@add')->name('admin.user.add');
+    Route::post('/admin/user/add', 'UserController@handleAdd')->name('admin.user.add');
 });
