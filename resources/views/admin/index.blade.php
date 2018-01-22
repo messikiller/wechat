@@ -68,9 +68,9 @@
                                         <template slot="title">
                                             <Icon type="person" size="16"></Icon>欢迎登陆，{{ $user->nickname }}
                                         </template>
-                                        <a href="#" target="sonoscape"><Menu-item name="1-1">个人中心</Menu-item></a>
-                                        <a href="#" target="sonoscape"><Menu-item name="1-2">重置密码</Menu-item></a>
-                                        <a href="/admin/logout"><Menu-item name="1-3">退出系统</Menu-item></a>
+                                        <a href="{{ route('admin.user.view', ['id' => $user->id]) }}" target="sonoscape"><Menu-item name="1-1">个人中心</Menu-item></a>
+                                        <a href="{{ route('admin.user.resetPassword', ['id' => $user->id]) }}" target="sonoscape"><Menu-item name="1-2">重置密码</Menu-item></a>
+                                        <a href="{{ url('/admin/logout') }}"><Menu-item name="1-3">退出系统</Menu-item></a>
                                     </Submenu>
                                 </div>
                                 <i-button

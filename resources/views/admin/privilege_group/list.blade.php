@@ -2,12 +2,18 @@
 
 @section('breadcrumb')
     <Breadcrumb>
-        <Breadcrumb-item>用户管理</Breadcrumb-item>
-        <Breadcrumb-item>用户列表</Breadcrumb-item>
+        <Breadcrumb-item>权限管理</Breadcrumb-item>
+        <Breadcrumb-item>权限组列表</Breadcrumb-item>
     </Breadcrumb>
 @endsection
 
 @section('main-content')
+    <Row>
+        <i-col span="24">
+            <i-button type="primary" icon="plus" onClick="window.location.href='{{ route('admin.privilegeGroup.add') }}'">添加权限组</i-button>
+        </i-col>
+    </Row>
+    <div style="height: 15px;"></div>
     <i-table border :columns="header" :data="data" size="small"></i-table>
     <div style="height: 15px;"></div>
     <Page :total="{{ $list->total() }}"
@@ -25,8 +31,7 @@ var vm = new Vue({
     data: {
         header: [
             {title: '#',       key: 'index', width: '100'},
-            {title: '账户名称', key: 'username'},
-            {title: '姓名',    key: 'nickname'},
+            {title: '权限组名称', key: 'title'},
             {title: '创建时间', key: 'created_at'},
             {title: '操作', key: 'action', width: '400', render: (h, params) => {
                 return h('div', [
@@ -43,33 +48,17 @@ var vm = new Vue({
                                 window.location.href = params.row.edit_url
                             }
                         }
-                    }, '编辑'),
-                    h('Button', {
-                        props: {
-                            type: 'warning',
-                            size: 'small'
-                        },
-                        style: {
-                            marginRight: '5px'
-                        },
-                        on: {
-                            click: () => {
-                                window.location.href = params.row.reset_password_url;
-                            }
-                        }
-                    }, '重置密码')
+                    }, '编辑')
                 ]);
             }}
         ],
         data: [
-            @foreach ($list as $user)
+            @foreach ($list as $group)
             {
                 'index': '{{ $list->perPage() * ($list->currentPage() - 1) + $loop->iteration }}',
-                'username': '{{ $user->username }}',
-                'nickname': '{{ $user->nickname }}',
-                'created_at': '{{ date("Y-m-d", $user->created_at) }}',
-                'edit_url': '{{ route('admin.user.edit', $user->id) }}',
-                'reset_password_url': '{{ route('admin.user.resetPassword', $user->id) }}'
+                'title': '{{ $group->title }}',
+                'created_at': '{{ date('Y-m-d', $group->created_at) }}',
+                'edit_url': '{{ route('admin.privilegeGroup.edit', $group->id) }}'
             }
                 @if (! $loop->last)
                 ,

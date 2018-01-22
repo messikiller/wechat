@@ -10,6 +10,7 @@ class UserPrivilege extends Model
 {
     protected $table      = 't_user_privileges';
     protected $primaryKey = 'id';
+    protected $guarded    = [];
 
     public $timestamps = false;
 

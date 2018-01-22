@@ -12,6 +12,9 @@ return [
         'icon'  => 'alert-circled',
         'title' => '权限管理',
         'sub'   => [
+            '权限组管理' => 'admin.privilegeGroup.list',
+            '权限管理'   => 'admin.privilege.list',
+            '用户权限管理' => 'admin.privilege.manage',
         ]
     ],
 
