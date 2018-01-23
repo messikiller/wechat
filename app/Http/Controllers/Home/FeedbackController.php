@@ -31,7 +31,7 @@ class FeedbackController extends HomeController
         $messages = [
             'hsn.required' => 'SN number is required'
         ];
-        
+
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
@@ -50,7 +50,7 @@ class FeedbackController extends HomeController
         $feedback->hsn          = $request->hsn;
         $feedback->type         = $request->type;
         $feedback->description  = strval($request->description);
-        $feedback->machine_data = $request->machine_data;
+        $feedback->machine_data = json_encode(json_decode($request->machine_data, true));
         $feedback->status       = config('define.feedback.status.processing.value');
         $feedback->created_at   = time();
 
