@@ -17,5 +17,13 @@ return [
             '用户权限管理' => 'admin.privilege.manage',
         ]
     ],
+    [
+        'icon'  => 'alert-circled',
+        'title' => '文章管理',
+        'sub'   => [
+            '文章列表'   => 'admin.article.list',
+            '发布新文章' => 'admin.article.add',
+        ]
+    ],
 
 ];

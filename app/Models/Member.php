@@ -8,8 +8,8 @@ class Member extends Model
 {
     protected $table      = 't_members';
     protected $primaryKey = 'id';
+    protected $guarded    = [];
 
     public $timestamps = false;
 
-    protected $guarded = [];
 }

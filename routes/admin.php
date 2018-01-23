@@ -5,7 +5,7 @@ Route::post('/admin/login', 'Admin\AuthController@check')->name('admin.login');
 Route::get('/admin/logout', 'Admin\AuthController@logout')->name('admin.logout');
 
 Route::namespace('Admin')->middleware('checkAdminLogin')->group(function () {
-    Route::get('/admin/index', 'IndexController@index')->name('admin.index.index');
+    Route::get('/admin', 'IndexController@index')->name('admin.index.index');
 
     Route::get('/admin/user/list', 'UserController@list')->name('admin.user.list');
     Route::get('/admin/user/view/{id}', 'UserController@view')->name('admin.user.view');
@@ -29,4 +29,10 @@ Route::namespace('Admin')->middleware('checkAdminLogin')->group(function () {
     Route::post('/admin/privilege/edit/{id}', 'PrivilegeController@handleEdit')->name('admin.privilege.edit');
     Route::get('/admin/user/privilege/manage', 'PrivilegeController@manage')->name('admin.privilege.manage');
     Route::post('/admin/user/privilege/manage', 'PrivilegeController@handleManage')->name('admin.privilege.manage');
+
+    Route::get('/admin/article/list', 'ArticleController@list')->name('admin.article.list');
+    Route::get('/admin/article/add', 'ArticleController@add')->name('admin.article.add');
+    Route::post('/admin/article/add', 'ArticleController@handleAdd')->name('admin.article.add');
+    Route::get('/admin/article/edit/{id}', 'ArticleController@edit')->name('admin.article.edit');
+    Route::post('/admin/article/edit/{id}', 'ArticleController@handleEdit')->name('admin.article.edit');
 });

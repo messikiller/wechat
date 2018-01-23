@@ -8,8 +8,8 @@ class Feedback extends Model
 {
     protected $table      = 't_feedbacks';
     protected $primaryKey = 'id';
+    protected $guarded    = [];
 
     public $timestamps = false;
 
-    protected $guarded = [];
 }
