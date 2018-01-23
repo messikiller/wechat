@@ -31,7 +31,7 @@ class WechatController extends Controller
 
         $member = Member::where('wechat_id', '=', $wechat_id)->first();
         if (empty($member)) {
-            $member = Member::create(['wechat_id' => $wechat_id, 'created_at' => time()]);
+            $member = Member::create(['wechat_id' => $wechat_id, 'machine_data' => '', 'created_at' => time()]);
         }
 
         $member->setAttribute('wechat', $user);
