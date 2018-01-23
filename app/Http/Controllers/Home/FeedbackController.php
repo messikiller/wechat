@@ -25,11 +25,11 @@ class FeedbackController extends HomeController
     public function handleAdd(Request $request)
     {
         $rules = [
-            'sn' => 'required',
+            'hsn' => 'required',
         ];
 
         $messages = [
-            'sn.required' => 'SN number is required'
+            'hsn.required' => 'SN number is required'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -46,12 +46,13 @@ class FeedbackController extends HomeController
 
         $feedback = new Feedback;
 
-        $feedback->member_id   = Auth::user()->id;
-        $feedback->sn          = $request->sn;
-        $feedback->type        = $request->type;
-        $feedback->description = strval($request->description);
-        $feedback->status      = config('define.feedback.status.processing.value');
-        $feedback->created_at  = time();
+        $feedback->member_id    = Auth::user()->id;
+        $feedback->hsn          = $request->hsn;
+        $feedback->type         = $request->type;
+        $feedback->description  = strval($request->description);
+        $feedback->machine_data = $request->machine_data;
+        $feedback->status       = config('define.feedback.status.processing.value');
+        $feedback->created_at   = time();
 
         $res = $feedback->save();
 
