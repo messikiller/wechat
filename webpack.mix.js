@@ -35,7 +35,7 @@ mix
         'semantic/dist/semantic.min.js',
         'public/js/admin.js'
     ], 'public/js/admin.js')
-    .copy('node_modules/semantic-ui/dist/themes/', 'public/css/themes/')
+    .copy('semantic/dist/themes/', 'public/css/themes/')
 
 
 ;
