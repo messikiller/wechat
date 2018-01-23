@@ -11,7 +11,7 @@
 <div id="app">
 </div>
 
-<script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/admin.js') }}"></script>
 <script>
 new Vue({
     el: '#app',
@@ -20,7 +20,7 @@ new Vue({
             title: "拒绝访问",
             content: "您没有权限访问该页面，如需获得相应权限，请与管理员联系！",
             onOk: () => {
-                window.location.href = '{{ url()->route('/index/welcome') }}';
+                window.location.href = '{{ route('admin.index.welcome') }}';
             }
         })
     }

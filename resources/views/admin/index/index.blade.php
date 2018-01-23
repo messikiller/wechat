@@ -88,7 +88,7 @@
                 </div>
 
                 <iframe name="sonoscape"
-                    src=""
+                    src="{{ route('admin.index.welcome') }}"
                     width="100%"
                     frameborder="no"
                     border="0"

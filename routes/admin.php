@@ -6,6 +6,10 @@ Route::get('/admin/logout', 'Admin\AuthController@logout')->name('admin.logout')
 
 Route::namespace('Admin')->middleware('checkAdminLogin')->group(function () {
     Route::get('/admin', 'IndexController@index')->name('admin.index.index');
+    Route::get('/admin/index/welcome', 'IndexController@welcome')->name('admin.index.welcome');
+});
+
+Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group(function () {
 
     Route::get('/admin/user/list', 'UserController@list')->name('admin.user.list');
     Route::get('/admin/user/view/{id}', 'UserController@view')->name('admin.user.view');

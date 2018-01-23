@@ -81,5 +81,6 @@ class Kernel extends HttpKernel
         'checkProfileCompleted' => \App\Http\Middleware\CheckProfileCompleted::class,
 
         'checkAdminLogin' => \App\Http\Middleware\CheckAdminLogin::class,
+        'checkAdminAcl' => \App\Http\Middleware\CheckAdminAcl::class,
     ];
 }
