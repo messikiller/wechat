@@ -4,18 +4,15 @@
 
 <div class="weui-tab">
     <div class="weui-navbar">
-        <div class="weui-navbar__item weui-bar__item_on">
-            选项一
+        <div class="weui-navbar__item" @click="clickTab('tab1')" :class="{weui-bar__item_on:selectedTab=='tab2'}">
+            全部反馈
         </div>
-        <div class="weui-navbar__item">
-            选项二
-        </div>
-        <div class="weui-navbar__item">
-            选项三
+        <div class="weui-navbar__item" @click="clickTab('tab2')" :class="{weui-bar__item_on:selectedTab=='tab2'}">
+            已处理
         </div>
     </div>
     <div class="weui-tab__panel">
-        <div>
+        <div v-show="selectedTab=='tab1'">
             <div class="weui-cells__title">我的反馈信息</div>
             <div class="weui-cells">
                 <a class="weui-cell weui-cell_access" href="javascript:;">
@@ -56,10 +53,23 @@
                 </a>
             </div>
         </div>
-        <div style="display:none">Page 2</div>
-        <div style="display:none">Page 3</div>
+        <div v-show="selectedTab=='tab2'">Page 2</div>
     </div>
 </div>
+@endsection
 
-
+@section('script')
+<script type="text/javascript">
+new Vue({
+    el: '#app',
+    data: {
+        selectedTab: 'tab1'
+    },
+    methods: {
+        clickTab: function (tab) {
+            this.selectedTab = tab;
+        }
+    }
+});
+</script>
 @endsection
