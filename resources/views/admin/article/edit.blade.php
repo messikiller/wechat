@@ -27,7 +27,7 @@
                     <i-col span="12">
                         <Form-item label="栏目" prop="album">
                                 <i-select v-model="formCustom.album">
-                                    @foreach (config('admin.article.album') as $album)
+                                    @foreach (config('define.article.album') as $album)
                                         <i-option value="{{ $album['value'] }}">{{ $album['desc'] }}</i-option>
                                     @endforeach
                                 </i-select>
@@ -39,7 +39,7 @@
                     <i-col span="12">
                         <Form-item label="状态" prop="status">
                                 <i-select v-model="formCustom.status">
-                                    @foreach (config('admin.article.status') as $status)
+                                    @foreach (config('define.article.status') as $status)
                                         <i-option value="{{ $status['value'] }}">{{ $status['desc'] }}</i-option>
                                     @endforeach
                                 </i-select>

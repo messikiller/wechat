@@ -99,7 +99,7 @@ class PrivilegeController extends AdminController
     {
         $uid = $request->input('uid', 0);
 
-        $users            = User::where('is_admin', '=', config('admin.user.is_admin.false.value'))->orderBy('created_at', 'desc')->get();
+        $users            = User::where('is_admin', '=', config('define.user.is_admin.false.value'))->orderBy('created_at', 'desc')->get();
         $privilegeGroups  = PrivilegeGroup::with('privileges')->orderBy('created_at', 'desc')->get();
         $userPrivilegeIds = UserPrivilege::where('user_id', '=', $uid)->get()->pluck('privilege_id')->unique()->toArray();
 

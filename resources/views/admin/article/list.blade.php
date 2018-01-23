@@ -23,7 +23,7 @@
                 <i-form :label-width="100">
                     <Form-item label="栏目" prop="album">
                         <i-select size="small" v-model="filterCustom.album">
-                            @foreach (config('admin.article.album') as $album)
+                            @foreach (config('define.article.album') as $album)
                                 <i-option value="{{ $album['value'] }}">{{ $album['desc'] }}</i-option>
                             @endforeach
                         </i-select>
@@ -35,7 +35,7 @@
                 <i-form :label-width="100">
                     <Form-item label="状态" prop="status">
                         <i-select size="small" v-model="filterCustom.status">
-                            @foreach (config('admin.article.status') as $status)
+                            @foreach (config('define.article.status') as $status)
                                 <i-option value="{{ $status['value'] }}">{{ $status['desc'] }}</i-option>
                             @endforeach
                         </i-select>
@@ -103,13 +103,13 @@ var vm = new Vue({
             {
                 'index': '{{ $list->perPage() * ($list->currentPage() - 1) + $loop->iteration }}',
                 'title': '{{ $article->title }}',
-                @foreach (config('admin.article.album') as $album)
+                @foreach (config('define.article.album') as $album)
                     @if ($album['value'] == $article->album)
                         'album_title': '{{ $album['desc'] }}',
                         @break
                     @endif
                 @endforeach
-                @foreach (config('admin.article.status') as $status)
+                @foreach (config('define.article.status') as $status)
                     @if ($status['value'] == $article->status)
                         'status_desc': '{{ $status['desc'] }}',
                         @break

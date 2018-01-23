@@ -12,7 +12,7 @@ class UserController extends AdminController
     {
         $pagesize = 20;
 
-        $list = User::where('is_admin', '=', config('admin.user.is_admin.false.value'))
+        $list = User::where('is_admin', '=', config('define.user.is_admin.false.value'))
             ->orderBy('created_at', 'desc')
             ->paginate($pagesize);
 
@@ -46,7 +46,7 @@ class UserController extends AdminController
         $user->password   = md5($request->password . $salt);
         $user->salt       = $salt;
         $user->nickname   = $request->nickname;
-        $user->is_admin   = config('admin.user.is_admin.false.value');
+        $user->is_admin   = config('define.user.is_admin.false.value');
         $user->created_at = time();
 
         $res = $user->save();

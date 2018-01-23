@@ -18,7 +18,7 @@ return [
         ]
     ],
     [
-        'icon'  => 'alert-circled',
+        'icon'  => 'ios-paper-outline',
         'title' => '文章管理',
         'sub'   => [
             '文章列表'   => 'admin.article.list',
