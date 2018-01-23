@@ -31,7 +31,7 @@ class FeedbackController extends HomeController
         $messages = [
             'hsn.required' => 'SN number is required'
         ];
-
+        
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
