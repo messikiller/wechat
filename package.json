@@ -21,7 +21,6 @@
     "dependencies": {
         "ionicons201": "^1.0.0",
         "iview": "^2.8.0",
-        "semantic-ui": "^2.2.13",
         "weixin-js-sdk": "^1.2.0",
         "weui": "^1.1.2"
     }
