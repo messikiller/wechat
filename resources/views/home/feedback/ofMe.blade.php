@@ -4,16 +4,15 @@
 
 <div class="weui-tab">
     <div class="weui-navbar">
-        <div class="weui-navbar__item" @click="clickTab('tab1')" :class="{weui-bar__item_on:selectedTab=='tab2'}">
+        <div class="weui-navbar__item" @click="clickTab('tab1')" :class="selectedTab=='tab1'?'weui-bar__item_on':''">
             全部反馈
         </div>
-        <div class="weui-navbar__item" @click="clickTab('tab2')" :class="{weui-bar__item_on:selectedTab=='tab2'}">
+        <div class="weui-navbar__item" @click="clickTab('tab2')" :class="selectedTab=='tab2'?'weui-bar__item_on':''">
             已处理
         </div>
     </div>
     <div class="weui-tab__panel">
         <div v-show="selectedTab=='tab1'">
-            <div class="weui-cells__title">我的反馈信息</div>
             <div class="weui-cells">
                 <a class="weui-cell weui-cell_access" href="javascript:;">
                     <div class="weui-cell__bd">
