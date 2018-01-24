@@ -27,6 +27,12 @@ class Member extends Model
         return $this->type == config('define.member.type.provider.value');
     }
 
+    public function hasNoMachine()
+    {
+        $res = (empty($this->machine_data)) || ($this->machine_type == config('define.member.machine_type.default.value'));
+        return $res;
+    }
+
     public function hasUltrasound()
     {
         $res = (! empty($this->machine_data)) && ($this->machine_type == config('define.member.machine_type.ultrasound.value'));

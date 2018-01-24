@@ -11,11 +11,6 @@ use App\Models\Feedback;
 
 class FeedbackController extends HomeController
 {
-    public function __construct()
-    {
-        $this->middleware('checkProfileCompleted');
-    }
-
     public function add()
     {
         $wx_config = EasyWeChat::officialAccount()->jssdk->buildConfig(['scanQRCode'], false);

@@ -98,7 +98,7 @@
             <i class="icon ion-android-volume-up primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            超声
+            超声中心
         </p>
     </a>
     <a href="{{ route('home.support.endoscope') }}" class="weui-grid">
@@ -106,7 +106,15 @@
             <i class="icon ion-social-instagram-outline primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            内窥镜
+            内窥镜中心
+        </p>
+    </a>
+    <a href="{{ route('home.support.endoMaintain') }}" class="weui-grid">
+        <div class="weui-grid__icon text-center">
+            <i class="icon ion-medkit primary-color" style="font-size: 24px;"></i>
+        </div>
+        <p class="weui-grid__label">
+            内窥镜保养
         </p>
     </a>
 </div>

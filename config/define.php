@@ -39,8 +39,9 @@ return [
             'doctor'   => ['value' => 1, 'desc' => '代理商'],
         ],
         'machine_type' => [
-            'endoscope'  => ['value' => 0, 'desc' => '超声'],
-            'ultrasound' => ['value' => 1, 'desc' => '超声'],
+            'default'    => ['value' => 0, 'desc' => '未填写'],
+            'endoscope'  => ['value' => 1, 'desc' => '内窥镜'],
+            'ultrasound' => ['value' => 2, 'desc' => '超声'],
         ],
     ],
 

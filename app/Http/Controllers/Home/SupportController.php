@@ -40,4 +40,15 @@ class SupportController extends HomeController
 
         return view('home.article.common_list', compact('detail', 'articles'));
     }
+
+    public function endoMaintain()
+    {
+        $detail   = 'Endoscope Maintain';
+        $articles = Article::published()
+            ->where('album', '=', config('define.article.album.endoscopy_maintain.value'))
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('home.article.common_list', compact('detail', 'articles'));
+    }
 }
