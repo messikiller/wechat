@@ -62,7 +62,7 @@
             <i class="icon ion-settings primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            医生中心（ES）
+            超声医生
         </p>
     </a>
     <a href="{{ route('home.care.ultraDoctor') }}" class="weui-grid">
@@ -70,7 +70,7 @@
             <i class="icon ion-hammer primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            医生中心（US）
+            内窥镜医生
         </p>
     </a>
     <a href="{{ route('home.care.providerCenter') }}" class="weui-grid">
