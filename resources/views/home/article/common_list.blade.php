@@ -10,7 +10,7 @@
                 <div class="weui-cell__bd">
                     <p>{{ str_limit($article->title, 20) }}</p>
                 </div>
-                <div class="weui-cell__ft">{{ date('Y-m-d H:i', $article->created_at) }}</div>
+                <div class="weui-cell__ft">{{ date('Y-m-d', $article->created_at) }}</div>
             </a>
         @endforeach
 
