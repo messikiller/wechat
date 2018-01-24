@@ -52,7 +52,7 @@ class MemberController extends HomeController
                 'title'            => 'Invalid input options',
                 'detail'           => $validator->errors()->first(),
                 'primary_btn_desc' => 'Profile',
-                'primary_btn_url'  => route('member.profile'),
+                'primary_btn_url'  => route('home.member.profile'),
             ]);
         }
 
@@ -84,7 +84,7 @@ class MemberController extends HomeController
                 'title'            => 'Failed',
                 'detail'           => 'Update user data failed',
                 'primary_btn_desc' => 'Profile',
-                'primary_btn_url'  => route('member.profile'),
+                'primary_btn_url'  => route('home.member.profile'),
                 'extra_btn_desc'   => 'Home',
                 'extra_btn_url'    => route('home.index'),
             ]);
@@ -96,7 +96,7 @@ class MemberController extends HomeController
             'msg_type'         => 'success',
             'title'            => 'Success',
             'primary_btn_desc' => 'Profile',
-            'primary_btn_url'  => route('member.profile'),
+            'primary_btn_url'  => route('home.member.profile'),
             'extra_btn_desc'   => 'Home',
             'extra_btn_url'    => route('home.index'),
         ]);

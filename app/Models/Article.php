@@ -10,4 +10,9 @@ class Article extends Model
     protected $primaryKey = 'id';
 
     public $timestamps = false;
+
+    public function scopePublished($query)
+    {
+        return $query->where('status', '=', config('define.article.status.normal.value'));
+    }
 }

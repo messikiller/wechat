@@ -13,7 +13,7 @@
 
 <div class="bar back-gray">会员中心</div>
 <div class="weui-grids">
-    <a href="{{ route('member.profile') }}" class="weui-grid">
+    <a href="{{ route('home.member.profile') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-person primary-color" style="font-size: 24px;"></i>
         </div>
@@ -21,7 +21,7 @@
             个人资料
         </p>
     </a>
-    <a href="{{ route('feedback.ofMe') }}" class="weui-grid">
+    <a href="{{ route('home.feedback.ofMe') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-chatbubble-working primary-color" style="font-size: 24px;"></i>
         </div>
@@ -37,7 +37,7 @@
             系统设置
         </p>
     </a>
-    <a href="{{ route('feedback.add') }}" class="weui-grid">
+    <a href="{{ route('home.feedback.add') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-chatbox-working primary-color" style="font-size: 24px;"></i>
         </div>
@@ -57,7 +57,7 @@
 
 <div class="bar back-gray">维修中心</div>
 <div class="weui-grids">
-    <a href="{{ route('care.endoDoctor') }}" class="weui-grid">
+    <a href="{{ route('home.care.endoDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-settings primary-color" style="font-size: 24px;"></i>
         </div>
@@ -65,7 +65,7 @@
             医生中心（ES）
         </p>
     </a>
-    <a href="{{ route('care.ultraDoctor') }}" class="weui-grid">
+    <a href="{{ route('home.care.ultraDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-hammer primary-color" style="font-size: 24px;"></i>
         </div>
@@ -73,7 +73,7 @@
             医生中心（US）
         </p>
     </a>
-    <a href="{{ route('care.providerCenter') }}" class="weui-grid">
+    <a href="{{ route('home.care.providerCenter') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-person-stalker primary-color" style="font-size: 24px;"></i>
         </div>
@@ -85,7 +85,7 @@
 
 <div class="bar back-gray">技术支持</div>
 <div class="weui-grids">
-    <a href="{{ route('support.news') }}" class="weui-grid">
+    <a href="{{ route('home.support.news') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-ios-paper primary-color" style="font-size: 24px;"></i>
         </div>
@@ -93,7 +93,7 @@
             新闻
         </p>
     </a>
-    <a href="{{ route('support.ultrasound') }}" class="weui-grid">
+    <a href="{{ route('home.support.ultrasound') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-volume-up primary-color" style="font-size: 24px;"></i>
         </div>
@@ -101,7 +101,7 @@
             超声
         </p>
     </a>
-    <a href="{{ route('support.endoscope') }}" class="weui-grid">
+    <a href="{{ route('home.support.endoscope') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-social-instagram-outline primary-color" style="font-size: 24px;"></i>
         </div>
@@ -113,7 +113,7 @@
 
 <div class="bar back-gray">关于开立</div>
 <div class="weui-grids">
-    <a href="{{ route('about.us') }}" class="weui-grid">
+    <a href="{{ route('home.about.us') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-ios-people primary-color" style="font-size: 24px;"></i>
         </div>
@@ -121,7 +121,7 @@
             关于我们
         </p>
     </a>
-    <a href="{{ route('about.globe') }}" class="weui-grid">
+    <a href="{{ route('home.about.globe') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
         </div>
@@ -129,7 +129,7 @@
             全球分支
         </p>
     </a>
-    <a href="{{ route('about.contact') }}" class="weui-grid">
+    <a href="{{ route('home.about.contact') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-social-whatsapp primary-color" style="font-size: 24px;"></i>
         </div>

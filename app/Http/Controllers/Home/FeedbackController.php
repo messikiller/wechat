@@ -40,7 +40,7 @@ class FeedbackController extends HomeController
                 'title'            => 'Invalid input options',
                 'detail'           => $validator->errors()->first(),
                 'primary_btn_desc' => 'Back',
-                'primary_btn_url'  => route('feedback.add'),
+                'primary_btn_url'  => route('home.feedback.add'),
             ]);
         }
 
