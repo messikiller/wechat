@@ -31,7 +31,7 @@ mix
     ], 'public/css/admin.css')
     .js('resources/assets/js/admin.js', 'public/js/admin.js')
     .scripts([
-        //'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
         'semantic/dist/semantic.min.js',
         'public/js/admin.js'
     ], 'public/js/admin.js')
