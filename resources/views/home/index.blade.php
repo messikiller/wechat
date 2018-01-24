@@ -31,10 +31,10 @@
     </a>
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            系统设置
+            设置语言
         </p>
     </a>
     <a href="{{ route('home.feedback.add') }}" class="weui-grid">
@@ -123,7 +123,7 @@
 <div class="weui-grids">
     <a href="{{ route('home.about.us') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-ios-people primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-ribbon-b primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             关于我们
@@ -131,7 +131,7 @@
     </a>
     <a href="{{ route('home.about.globe') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-android-globe primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             全球分支
