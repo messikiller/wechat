@@ -78,7 +78,7 @@
             <i class="icon ion-person-stalker primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            经销商中心
+            代理商中心
         </p>
     </a>
 </div>
