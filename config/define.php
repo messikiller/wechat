@@ -72,9 +72,6 @@ return [
             'ultrasound_center'  => ['value' => 5, 'desc' => '超声中心（技术支持）'],
             'endoscopy_center'   => ['value' => 6, 'desc' => '内窥镜中心（技术支持）'],
             'endoscopy_maintain' => ['value' => 7, 'desc' => '内窥镜维修（技术支持）'],
-            'aboutus'            => ['value' => 8, 'desc' => '关于我们'],
-            'globe'              => ['value' => 9, 'desc' => '全球分支'],
-            'contactus'          => ['value' => 10, 'desc' => '联系我们'],
         ],
         'status' => [
             'normal' => ['value' => 0, 'desc' => '正常'],

@@ -21,11 +21,23 @@ class SupportController extends HomeController
 
     public function ultrasound()
     {
+        $detail   = 'Ultralsound Support';
+        $articles = Article::published()
+            ->where('album', '=', config('define.article.album.ultrasound_center.value'))
+            ->orderBy('created_at', 'desc')
+            ->get();
 
+        return view('home.article.common_list', compact('detail', 'articles'));
     }
 
     public function endoscope()
     {
+        $detail   = 'Endoscope Support';
+        $articles = Article::published()
+            ->where('album', '=', config('define.article.album.endoscopy_center.value'))
+            ->orderBy('created_at', 'desc')
+            ->get();
 
+        return view('home.article.common_list', compact('detail', 'articles'));
     }
 }

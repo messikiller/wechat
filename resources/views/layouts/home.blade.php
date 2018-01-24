@@ -43,7 +43,8 @@ body {
 }
 
 .footer {
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .wechat-color {
