@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\Member;
 use App\Services\Auth;
 
 /**
@@ -34,7 +33,7 @@ class CheckMemberProfile
         $res = false;
         foreach ($rules as $rule)
         {
-            list($is_completed, $machine_type, $type) = explode('|', $rule);
+            list($is_completed, $type, $machine_type) = explode('|', $rule);
 
             $r = $this->performCompletedCheck($member, $is_completed)
                 && $this->performTypeCheck($member, $type)
@@ -53,7 +52,7 @@ class CheckMemberProfile
         return $next($request);
     }
 
-    private function performCompletedCheck(Member $member, $is_completed)
+    private function performCompletedCheck($member, $is_completed)
     {
         $ret = false;
         switch ($is_completed) {
@@ -61,11 +60,13 @@ class CheckMemberProfile
                 $ret = true;
                 break;
 
-            case 'F':
+            // true
+            case 'T':
                 $ret = $member->isCompleted() == config('define.member.is_completed.true.value');
                 break;
 
-            case 'T':
+            // false
+            case 'F':
                 $ret = $member->isCompleted() == config('define.member.is_completed.false.value');
                 break;
 
@@ -78,7 +79,7 @@ class CheckMemberProfile
             $this->page = [
                 'msg_type'         => 'info',
                 'title'            => 'Forbidden',
-                'detail'           => 'Access Denied, your profile is '. $is_completed,
+                'detail'           => 'Access Denied for your profile is completed or not',
                 'primary_btn_desc' => 'Home',
                 'primary_btn_url'  => route('home.index'),
             ];
@@ -87,7 +88,7 @@ class CheckMemberProfile
         return $ret;
     }
 
-    private function performTypeCheck(Member $member, $type)
+    private function performTypeCheck($member, $type)
     {
         $ret = false;
         switch ($type) {
@@ -114,7 +115,7 @@ class CheckMemberProfile
             $this->page = [
                 'msg_type'         => 'info',
                 'title'            => 'Forbidden',
-                'detail'           => 'Access Denied, your role is '. $type,
+                'detail'           => 'Access Denied for your role type',
                 'primary_btn_desc' => 'Home',
                 'primary_btn_url'  => route('home.index'),
             ];
@@ -123,7 +124,7 @@ class CheckMemberProfile
         return $ret;
     }
 
-    private function performMachineTypeCheck(Member $member, $machine_type)
+    private function performMachineTypeCheck($member, $machine_type)
     {
         $ret = false;
         switch ($machine_type) {
@@ -155,7 +156,7 @@ class CheckMemberProfile
             $this->page = [
                 'msg_type'         => 'info',
                 'title'            => 'Forbidden',
-                'detail'           => 'Access Denied, your machine is '. $machine_type,
+                'detail'           => 'Access Denied for your machine type',
                 'primary_btn_desc' => 'Home',
                 'primary_btn_url'  => route('home.index'),
             ];
