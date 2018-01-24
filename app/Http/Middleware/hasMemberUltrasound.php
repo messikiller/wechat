@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Services\Auth;
 
-class CheckProfileCompleted
+class hasMemberUltrasound
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,11 @@ class CheckProfileCompleted
      */
     public function handle($request, Closure $next)
     {
-        if (env('ENABLE_PROFILE_CHECK', true) && ! Auth::user()->isCompleted()) {
+        if (! Auth::user()->hasUltrasound()) {
             return response()->view('home.common.message', [
                 'msg_type'         => 'info',
                 'title'            => 'Forbidden',
-                'detail'           => 'Please complete your profile',
+                'detail'           => 'Your machine type is not ultrasound',
                 'primary_btn_desc' => 'Home',
                 'primary_btn_url'  => route('home.index'),
             ]);

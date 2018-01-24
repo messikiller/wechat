@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Services\Auth;
 
-class CheckProfileCompleted
+class IsMemberDoctor
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,11 @@ class CheckProfileCompleted
      */
     public function handle($request, Closure $next)
     {
-        if (env('ENABLE_PROFILE_CHECK', true) && ! Auth::user()->isCompleted()) {
+        if (! Auth::user()->isDoctor()) {
             return response()->view('home.common.message', [
                 'msg_type'         => 'info',
                 'title'            => 'Forbidden',
-                'detail'           => 'Please complete your profile',
+                'detail'           => 'Access denied, only doctor is permitted',
                 'primary_btn_desc' => 'Home',
                 'primary_btn_url'  => route('home.index'),
             ]);

@@ -30,9 +30,17 @@ return [
     ],
 
     'member' => [
+        'is_completed' => [
+            'false' => ['value' => 0, 'desc' => '否'],
+            'true'  => ['value' => 1, 'desc' => '是'],
+        ],
         'type' => [
             'provider' => ['value' => 0, 'desc' => '医生'],
             'doctor'   => ['value' => 1, 'desc' => '代理商'],
+        ],
+        'machine_type' => [
+            'endoscope'  => ['value' => 0, 'desc' => '超声'],
+            'ultrasound' => ['value' => 1, 'desc' => '超声'],
         ],
     ],
 
@@ -54,14 +62,19 @@ return [
             'false' => ['value' => 0, 'desc' => '否'],
         ],
     ],
-    
+
     'article' => [
         'album' => [
-            'news'               => ['value' => 1, 'desc' => '新闻'],
-            'distributor_center' => ['value' => 2, 'desc' => '代理商中心'],
-            'ultrasound_center'  => ['value' => 3, 'desc' => '超声中心'],
-            'endoscopy_center'   => ['value' => 4, 'desc' => '内窥镜中心'],
-            'endoscopy_maintain' => ['value' => 5, 'desc' => '内窥镜维修']
+            'doctor_center_es'   => ['value' => 1, 'desc' => '内窥镜医生中心（维修）'],
+            'doctor_center_us'   => ['value' => 2, 'desc' => '超声医生中心（维修）'],
+            'distributor_center' => ['value' => 3, 'desc' => '代理商中心（维修）'],
+            'news'               => ['value' => 4, 'desc' => '新闻'],
+            'ultrasound_center'  => ['value' => 5, 'desc' => '超声中心（技术支持）'],
+            'endoscopy_center'   => ['value' => 6, 'desc' => '内窥镜中心（技术支持）'],
+            'endoscopy_maintain' => ['value' => 7, 'desc' => '内窥镜维修（技术支持）'],
+            'aboutus'            => ['value' => 8, 'desc' => '关于我们'],
+            'globe'              => ['value' => 9, 'desc' => '全球分支'],
+            'contactus'          => ['value' => 10, 'desc' => '联系我们'],
         ],
         'status' => [
             'normal' => ['value' => 0, 'desc' => '正常'],

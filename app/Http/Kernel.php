@@ -79,6 +79,10 @@ class Kernel extends HttpKernel
 
         'wechat' => \App\Http\Middleware\CheckWechatAuth::class,
         'checkProfileCompleted' => \App\Http\Middleware\CheckProfileCompleted::class,
+        'hasEndoscope' => \App\Http\Middleware\hasMemberEndoscope::class,
+        'hasUltrasound' => \App\Http\Middleware\hasMemberUltrasound::class,
+        'isDoctor' => \App\Http\Middleware\isMemberDoctor::class,
+        'isProvider' => \App\Http\Middleware\isMemberProvider::class,
 
         'checkAdminLogin' => \App\Http\Middleware\CheckAdminLogin::class,
         'checkAdminAcl' => \App\Http\Middleware\CheckAdminAcl::class,
