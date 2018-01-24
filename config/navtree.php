@@ -25,5 +25,13 @@ return [
             '发布新文章' => 'admin.article.add',
         ]
     ],
+    [
+        'icon'  => 'key',
+        'title' => '识别码管理',
+        'sub'   => [
+            '识别码列表' => 'admin.cdkey.list',
+            '添加识别码' => 'admin.cdkey.add',
+        ]
+    ],
 
 ];

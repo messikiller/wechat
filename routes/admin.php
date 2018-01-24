@@ -39,4 +39,10 @@ Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group
     Route::post('/admin/article/add', 'ArticleController@handleAdd')->name('admin.article.add');
     Route::get('/admin/article/edit/{id}', 'ArticleController@edit')->name('admin.article.edit');
     Route::post('/admin/article/edit/{id}', 'ArticleController@handleEdit')->name('admin.article.edit');
+
+    Route::get('/admin/cdkey/list', 'CdkeyController@list')->name('admin.cdkey.list');
+    Route::get('/admin/cdkey/add', 'CdkeyController@add')->name('admin.cdkey.add');
+    Route::post('/admin/cdkey/add', 'CdkeyController@handleAdd')->name('admin.cdkey.add');
+    Route::get('/admin/cdkey/edit/{id}', 'CdkeyController@edit')->name('admin.cdkey.edit');
+    Route::post('/admin/cdkey/edit/{id}', 'CdkeyController@handleEdit')->name('admin.cdkey.edit');
 });
