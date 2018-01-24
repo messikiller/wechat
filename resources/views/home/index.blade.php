@@ -47,18 +47,10 @@
     </a>
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-archive primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-android-desktop primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            下载专区
-        </p>
-    </a>
-    <a href="javascript:;" class="weui-grid">
-        <div class="weui-grid__icon text-center">
-            <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
-        </div>
-        <p class="weui-grid__label">
-            联系我们
+            我的机器
         </p>
     </a>
 </div>
@@ -67,7 +59,7 @@
 <div class="weui-grids">
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-settings primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             医生中心（ES）
@@ -75,7 +67,7 @@
     </a>
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-hammer primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             医生中心（US）
@@ -83,7 +75,7 @@
     </a>
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-person-stalker primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             经销商中心
@@ -103,7 +95,7 @@
     </a>
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-android-volume-up primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             超声
@@ -111,7 +103,7 @@
     </a>
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-social-instagram-outline primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             内窥镜
@@ -123,7 +115,7 @@
 <div class="weui-grids">
     <a href="javascript:;" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-contacts primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-ios-people primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             关于我们
@@ -135,6 +127,14 @@
         </div>
         <p class="weui-grid__label">
             全球分支
+        </p>
+    </a>
+    <a href="javascript:;" class="weui-grid">
+        <div class="weui-grid__icon text-center">
+            <i class="icon ion-social-whatsapp primary-color" style="font-size: 24px;"></i>
+        </div>
+        <p class="weui-grid__label">
+            联系我们
         </p>
     </a>
 </div>
