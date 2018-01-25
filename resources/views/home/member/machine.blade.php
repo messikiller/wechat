@@ -28,8 +28,8 @@
                 <label class="weui-label">SN</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" ref="snInput" readonly="true" name="machine_sn" v-model="formCustom.machine_sn">
-                <input type="hidden" name="machine_data" ref="machineDataInput" v-model="formCustom.machine_data">
+                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" ref="snInput" readonly="true" name="machine_sn" value="{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}">
+                <input type="hidden" name="machine_data" ref="machineDataInput" value="{{ $member->machine_data }}">
             </div>
             <div class="weui-cell__ft">
                 <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
@@ -55,8 +55,6 @@ var vm = new Vue({
     },
     data: {
         formCustom: {
-            machine_sn: '{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}',
-            machine_data: '{{ $member->machine_data }}',
             machine_type: '{{ $member->machine_type }}'
         }
     },
@@ -64,7 +62,6 @@ var vm = new Vue({
         clickScanBtn: function () {
             var _snInput = this.$refs.snInput;
             var _machineDataInput = this.$refs.machineDataInput;
-            var _showScanError = this.showScanError;
             wx.scanQRCode({
                 desc: 'Scan SonoScape SN QRCode',
                 needResult: 1,

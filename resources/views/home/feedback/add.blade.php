@@ -63,7 +63,6 @@ var vm = new Vue({
         clickScanBtn: function () {
             var _snInput = this.$refs.snInput;
             var _machineDataInput = this.$refs.machineDataInput;
-            var _showScanError = this.showScanError;
             wx.scanQRCode({
                 desc: 'Scan SonoScape SN QRCode',
                 needResult: 1,
