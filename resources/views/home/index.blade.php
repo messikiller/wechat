@@ -45,7 +45,7 @@
             设备报修
         </p>
     </a>
-    <a href="javascript:;" class="weui-grid">
+    <a href="{{ route('home.member.machine') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-desktop primary-color" style="font-size: 24px;"></i>
         </div>

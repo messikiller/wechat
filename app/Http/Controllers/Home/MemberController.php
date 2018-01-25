@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use Validator;
+use EasyWeChat;
 use App\Services\Auth;
 use App\Models\Member;
 
@@ -100,5 +101,19 @@ class MemberController extends HomeController
             'extra_btn_desc'   => 'Home',
             'extra_btn_url'    => route('home.index'),
         ]);
+    }
+
+    public function machine()
+    {
+        $member_id = Auth::user()->id;
+        $member    = optional(Member::find($member_id));
+        $wx_config = EasyWeChat::officialAccount()->jssdk->buildConfig(['scanQRCode'], false);
+
+        return view('home.member.machine', compact('member', 'wx_config'));
+    }
+
+    public function updateMachine(Request $request)
+    {
+
     }
 }
