@@ -12,7 +12,7 @@
                 <label for="" class="weui-label">机器类型</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="machine_type"  v-model="formCustom.machine_data">
+                <select class="weui-select" name="machine_type"  v-model="formCustom.machine_type">
                     @foreach (config('define.member.machine_type') as $key => $type)
                         @if ($key == 'default')
                             <option value="{{ $type['value'] }}"></option>
@@ -28,7 +28,7 @@
                 <label class="weui-label">SN</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" ref="snInput" readonly="true" name="hsn" v-model="formCustom.machine_sn">
+                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" ref="snInput" readonly="true" name="machine_sn" v-model="formCustom.machine_sn">
                 <input type="hidden" name="machine_data" ref="machineDataInput" v-model="formCustom.machine_data">
             </div>
             <div class="weui-cell__ft">

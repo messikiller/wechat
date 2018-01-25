@@ -106,7 +106,7 @@ class MemberController extends HomeController
     public function machine()
     {
         $member_id = Auth::user()->id;
-        $member    = optional(Member::find($member_id));
+        $member    = Member::find($member_id);
         $wx_config = EasyWeChat::officialAccount()->jssdk->buildConfig(['scanQRCode'], false);
 
         return view('home.member.machine', compact('member', 'wx_config'));
@@ -114,6 +114,44 @@ class MemberController extends HomeController
 
     public function updateMachine(Request $request)
     {
+        $machine_type = $request->machine_type;
+        $machine_sn   = $request->machine_sn;
+        $machine_data = $request->machine_data;
 
+        if (empty($machine_type) || empty($machine_sn) || empty($machine_data)) {
+            return view('home.common.message', [
+                'msg_type'         => 'info',
+                'title'            => 'Invalid',
+                'detail'           => 'please fill form completely',
+                'primary_btn_desc' => 'Back',
+                'primary_btn_url'  => route('home.member.machine'),
+            ]);
+        }
+
+        $member_id = Auth::user()->id;
+        $member    = Member::find($member_id);
+
+        $member->machine_type = $machine_type;
+        $member->machine_data = json_encode(json_decode($machine_data, true));
+
+        $res = $member->save();
+        if ($res === false) {
+            return view('home.common.message', [
+                'msg_type'         => 'warn',
+                'title'            => 'Failed',
+                'detail'           => 'Update machine data failed',
+                'primary_btn_desc' => 'Home',
+                'primary_btn_url'  => route('home.index')
+            ]);
+        }
+
+        Auth::reload();
+
+        return view('home.common.message', [
+            'msg_type'         => 'success',
+            'title'            => 'Success',
+            'primary_btn_desc' => 'Home',
+            'primary_btn_url'  => route('home.index')
+        ]);
     }
 }
