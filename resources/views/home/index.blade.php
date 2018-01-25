@@ -57,7 +57,7 @@
 
 <div class="bar back-gray">维修中心</div>
 <div class="weui-grids">
-    <a href="{{ route('home.care.endoDoctor') }}" class="weui-grid">
+    <a href="{{ route('home.care.ultraDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-settings primary-color" style="font-size: 24px;"></i>
         </div>
@@ -65,7 +65,7 @@
             超声医生
         </p>
     </a>
-    <a href="{{ route('home.care.ultraDoctor') }}" class="weui-grid">
+    <a href="{{ route('home.care.endoDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-hammer primary-color" style="font-size: 24px;"></i>
         </div>
