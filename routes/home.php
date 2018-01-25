@@ -7,6 +7,9 @@ Route::namespace('Home')->middleware('wechat')->group(function () {
     Route::get('/home/index', 'IndexController@index')->name('home.index');
     Route::get('/home/index/article/{id}', 'IndexController@viewArticle')->name('home.index.article');
 
+    Route::get('/system/language', 'SystemController@language')->name('home.system.language');
+    Route::post('/system/language', 'SystemController@updateLanguage')->name('home.system.language');
+
     Route::get('/member/profile',  'MemberController@profile')->name('home.member.profile');
     Route::post('/member/profile', 'MemberController@updateProfile')->name('home.member.profile');
     Route::get('/member/machine',  'MemberController@machine')->name('home.member.machine');
