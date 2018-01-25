@@ -50,7 +50,8 @@
                                 <tr>
                                     <th style="background-color:#f9fafb;"></th>
                                     <th>SN</th>
-                                    <th>型号</th>
+                                    <th>识别码</th>
+                                    <th>机型</th>
                                     <th>软件版本</th>
                                 </tr>
                             </thead>
@@ -58,18 +59,21 @@
                                 <tr>
                                     <td>处理器</td>
                                     <td>{{ $machine_data['hsn'] }}</td>
+                                    <td>{{ $machine_data['hcdkey'] }}</td>
                                     <td>{{ $machine_data['hmodel'] }}</td>
                                     <td>{{ $machine_data['hversion'] }}</td>
                                 </tr>
                                 <tr>
                                     <td>晶体</td>
                                     <td>{{ $machine_data['esn'] }}</td>
+                                    <td>{{ $machine_data['ecdkey'] }}</td>
                                     <td>{{ $machine_data['emodel'] }}</td>
                                     <td>{{ $machine_data['eversion'] }}</td>
                                 </tr>
                                 <tr>
                                     <td>光源</td>
                                     <td>{{ $machine_data['lsn'] }}</td>
+                                    <td>{{ $machine_data['lcdkey'] }}</td>
                                     <td>{{ $machine_data['lmodel'] }}</td>
                                     <td>{{ $machine_data['lversion'] }}</td>
                                 </tr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AdminController;
 use App\Models\Feedback;
+use App\Models\Cdkey;
 
 class FeedbackController extends AdminController
 {
@@ -42,16 +43,27 @@ class FeedbackController extends AdminController
     {
         $feedback = Feedback::find($id);
 
+        $cdkeys = Cdkey::orderBy('created_at', 'desc')->get();
+        $cdkeyIdx = $cdkeys->keyBy('title')->toArray();
+
         $machineData = json_decode($feedback->machine_data, true);
+
+        $hcdkey = $machineData['H']['M'];
+        $ecdkey = $machineData['E']['M'];
+        $lcdkey = $machineData['L']['M'];
+
         $machine_data = [
             'hsn'      => $machineData['H']['S'],
-            'hmodel'   => $machineData['H']['M'],
+            'hcdkey'   => $hcdkey,
+            'hmodel'   => empty($cdkeyIdx[$hcdkey]['model']) ? '-' : $cdkeyIdx[$hcdkey]['model'],
             'hversion' => $machineData['H']['V'],
             'esn'      => $machineData['E']['S'],
-            'emodel'   => $machineData['E']['M'],
+            'ecdkey'   => $ecdkey,
+            'emodel'   => empty($cdkeyIdx[$ecdkey]['model']) ? '-' : $cdkeyIdx[$ecdkey]['model'],
             'eversion' => $machineData['E']['V'],
             'lsn'      => $machineData['L']['S'],
-            'lmodel'   => $machineData['L']['M'],
+            'lcdkey'   => $lcdkey,
+            'lmodel'   => empty($cdkeyIdx[$lcdkey]['model']) ? '-' : $cdkeyIdx[$lcdkey]['model'],
             'lversion' => $machineData['L']['V'],
         ];
 
