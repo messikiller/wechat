@@ -33,5 +33,12 @@ return [
             '添加识别码' => 'admin.cdkey.add',
         ]
     ],
+    [
+        'icon'  => 'chatbubble-working',
+        'title' => '反馈管理',
+        'sub'   => [
+            '反馈列表' => 'admin.feedback.list',
+        ]
+    ],
 
 ];

@@ -45,4 +45,9 @@ Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group
     Route::post('/admin/cdkey/add', 'CdkeyController@handleAdd')->name('admin.cdkey.add');
     Route::get('/admin/cdkey/edit/{id}', 'CdkeyController@edit')->name('admin.cdkey.edit');
     Route::post('/admin/cdkey/edit/{id}', 'CdkeyController@handleEdit')->name('admin.cdkey.edit');
+
+    Route::get('/admin/feedback/list', 'FeedbackController@list')->name('admin.feedback.list');
+    Route::get('/admin/feedback/view/{id}', 'FeedbackController@view')->name('admin.feedback.view');
+    Route::get('/admin/feedback/edit/{id}', 'FeedbackController@edit')->name('admin.feedback.edit');
+    Route::post('/admin/feedback/edit/{id}', 'FeedbackController@handleEdit')->name('admin.feedback.edit');
 });

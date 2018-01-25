@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
-class SystemController extends AdminController
+class SystemController extends HomeController
 {
     public function language()
     {

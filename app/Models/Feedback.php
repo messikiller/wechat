@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Member;
 
 class Feedback extends Model
 {
@@ -11,5 +12,10 @@ class Feedback extends Model
     protected $guarded    = [];
 
     public $timestamps = false;
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class, 'member_id', 'id');
+    }
 
 }
