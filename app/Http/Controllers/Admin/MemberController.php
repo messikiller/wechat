@@ -20,7 +20,7 @@ class MemberController extends AdminController
             $filter['filter_type'] = $filter_type;
         }
 
-        $list = Member::with('region', 'hospital', 'company')
+        $list = Member::with('region')
             ->where($where)
             ->orderBy('created_at', 'desc')
             ->paginate($pagesize)
