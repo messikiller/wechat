@@ -57,8 +57,9 @@ var vm = new Vue({
             {title: '邮箱', key: 'mail'},
             {title: '手机号', key: 'mobile'},
             {title: '地区', key: 'region_title'},
-            {title: '医院', key: 'hospital_title'},
-            {title: '公司', key: 'company_title'},
+            {title: '医院', key: 'hospital'},
+            {title: '公司', key: 'company'},
+            {title: '地址', key: 'address'},
             {title: '机器类型', key: 'machine_type_desc'},
             {title: '是否完善资料', key: 'is_completed_desc'},
             {title: '操作', key: 'action', width: '200', render: (h, params) => {
@@ -94,8 +95,9 @@ var vm = new Vue({
                 'mail': '{{ $member->mail }}',
                 'mobile': '{{ $member->mobile }}',
                 'region_title': '{{ optional($member->region)->title }}',
-                'hospital_title': '{{ optional($member->hospital)->title }}',
-                'company_title': '{{ optional($member->company)->title }}',
+                'hospital': '{{ $member->hospital }}',
+                'company': '{{ $member->company }}',
+                'address': '{{ $member->address }}',
                 @foreach (config('define.member.machine_type') as $machine_type)
                     @if ($machine_type['value'] == $member->machine_type)
                         'machine_type_desc': '{{ $machine_type['desc'] }}',

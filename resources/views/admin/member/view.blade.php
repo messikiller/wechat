@@ -34,12 +34,17 @@
 
                 <tr>
                     <td width="100" class="right aligned">医院</td>
-                    <td>{{ empty($member->hospital_id) ? '' : $member->hospital->title }}</td>
+                    <td>{{ $member->hospital }}</td>
                 </tr>
 
                 <tr>
                     <td width="100" class="right aligned">公司</td>
-                    <td>{{ empty($member->company_id) ? '' : $member->company->title }}</td>
+                    <td>{{ $member->company }}</td>
+                </tr>
+
+                <tr>
+                    <td width="100" class="right aligned">地址</td>
+                    <td>{{ $member->address }}</td>
                 </tr>
 
                 <tr>

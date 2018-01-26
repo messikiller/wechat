@@ -18,12 +18,9 @@ class MemberController extends HomeController
     {
         $member_id = Auth::user()->id;
         $member    = Member::find($member_id);
-
-        $hospitals = Hospital::orderBy('created_at', 'desc')->get();
-        $companies = Company::orderBy('created_at', 'desc')->get();
         $regions   = Region::orderBy('created_at', 'desc')->get();
 
-        return view('home.member.profile', compact('member', 'hospitals', 'companies', 'regions'));
+        return view('home.member.profile', compact('member', 'regions'));
     }
 
     public function updateProfile(Request $request)
@@ -35,21 +32,23 @@ class MemberController extends HomeController
             'mail'        => 'required|email',
             'mobile'      => 'required|integer',
             'region_id'   => 'required',
-            'company_id'  => 'required_if:type,1',
-            'hospital_id' => 'required_if:type,0',
+            'company'     => 'required_if:type,1',
+            'hospital'    => 'required_if:type,0',
+            'address'     => 'required'
         ];
 
         $messages = [
-            'type.required'           => 'Role type is required',
-            'nickname.required'       => 'Name is required',
-            'sex.required'            => 'Sex is required',
-            'mail.required'           => 'Mail is required',
-            'mail.email'              => 'Invalid mail',
-            'mobile.required'         => 'Mobile is required',
-            'mobile.integer'          => 'Invalid mobile',
-            'region_id.required'      => 'Region is required',
-            'company_id.required_if'  => 'Company is required for provider',
-            'hospital_id.required_if' => 'Hospital is required for doctor',
+            'type.required'        => 'Role type is required',
+            'nickname.required'    => 'Name is required',
+            'sex.required'         => 'Sex is required',
+            'mail.required'        => 'Mail is required',
+            'mail.email'           => 'Invalid mail',
+            'mobile.required'      => 'Mobile is required',
+            'mobile.integer'       => 'Invalid mobile',
+            'region_id.required'   => 'Region is required',
+            'company.required_if'  => 'Company is required for provider',
+            'hospital.required_if' => 'Hospital is required for doctor',
+            'address.required'     => 'Address is required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -57,7 +56,7 @@ class MemberController extends HomeController
         if ($validator->fails()) {
             return view('home.common.message', [
                 'msg_type'         => 'info',
-                'title'            => 'Invalid input options',
+                'title'            => 'Invalid Entry',
                 'detail'           => $validator->errors()->first(),
                 'primary_btn_desc' => 'Profile',
                 'primary_btn_url'  => route('home.member.profile'),
@@ -80,9 +79,9 @@ class MemberController extends HomeController
         $member->mail         = $request->mail;
         $member->mobile       = $request->mobile;
         $member->region_id    = $request->region_id;
-        $member->company_id   = $request->company_id;
-        $member->hospital_id  = $request->hospital_id;
-        $member->company_id   = $request->company_id;
+        $member->company      = $request->company;
+        $member->hospital     = $request->hospital;
+        $member->address      = $request->address;
         $member->is_completed = config('define.member.is_compeleted.true.value');
 
         $res = $member->save();

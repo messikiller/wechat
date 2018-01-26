@@ -20,16 +20,6 @@ class Member extends Model
         return $this->belongsTo(Region::class, 'region_id', 'id');
     }
 
-    public function hospital()
-    {
-        return $this->belongsTo(Hospital::class, 'hospital_id', 'id');
-    }
-
-    public function company()
-    {
-        return $this->belongsTo(Company::class, 'company_id', 'id');
-    }
-
     public function isCompleted()
     {
         return $this->is_completed == config('define.member.is_completed.true.value');

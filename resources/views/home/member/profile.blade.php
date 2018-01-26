@@ -33,8 +33,8 @@
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="sex">
-                    <option value="1" {{ $member->sex == 1 ? 'selected="selected"' : '' }}>男</option>
-                    <option value="2" {{ $member->sex == 2 ? 'selected="selected"' : '' }}>女</option>
+                    <option value="1" {{ $member->sex == 1 ? 'selected="selected"' : '' }}>Male</option>
+                    <option value="2" {{ $member->sex == 2 ? 'selected="selected"' : '' }}>Female</option>
                 </select>
             </div>
         </div>
@@ -74,12 +74,7 @@
                 <label class="weui-label">公司</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="company_id">
-                    <option></option>
-                    @foreach ($companies as $company)
-                        <option value="{{ $company->id }}" {{ $company->id == $member->company_id ? 'selected="selected"' : '' }}>{{ $company->title }}</option>
-                    @endforeach
-                </select>
+                <input class="weui-input" type="text" placeholder="请输入公司名称" name="company" value="{{ $member->company }}"/>
             </div>
         </div>
 
@@ -88,17 +83,21 @@
                 <label for="" class="weui-label">医院</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="hospital_id">
-                    <option></option>
-                    @foreach ($hospitals as $hospital)
-                        <option value="{{ $hospital->id }}" {{ $hospital->id == $member->hospital_id ? 'selected="selected"' : '' }}>{{ $hospital->title }}</option>
-                    @endforeach
-                </select>
+                <input class="weui-input" type="text" placeholder="请输入医院名称" name="hospital" value="{{ $member->hospital }}"/>
+            </div>
+        </div>
+
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">地址</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="请输入详细地址" name="address" value="{{ $member->address }}"/>
             </div>
         </div>
 
     </div>
-    <div class="weui-cells__tips">注意：医生不需要选择公司，代理商不需要选择医院</div>
+    <div class="weui-cells__tips">注意：医生不需要填写公司，代理商不需要填写医院</div>
 
     <div class="weui-btn-area">
         <button type="submit" class="weui-btn weui-btn_primary">Submit</button>
