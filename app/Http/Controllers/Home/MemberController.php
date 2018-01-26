@@ -83,7 +83,7 @@ class MemberController extends HomeController
         $member->company_id   = $request->company_id;
         $member->hospital_id  = $request->hospital_id;
         $member->company_id   = $request->company_id;
-        $member->is_completed = 1;
+        $member->is_completed = config('define.member.is_compeleted.true.value');
 
         $res = $member->save();
         if ($res === false) {
@@ -91,7 +91,7 @@ class MemberController extends HomeController
                 'msg_type'         => 'warn',
                 'title'            => 'Failed',
                 'detail'           => 'Update user data failed',
-                'primary_btn_desc' => 'Profile',
+                'primary_btn_desc' => 'Back',
                 'primary_btn_url'  => route('home.member.profile'),
                 'extra_btn_desc'   => 'Home',
                 'extra_btn_url'    => route('home.index'),
@@ -103,7 +103,7 @@ class MemberController extends HomeController
         return view('home.common.message', [
             'msg_type'         => 'success',
             'title'            => 'Success',
-            'primary_btn_desc' => 'Profile',
+            'primary_btn_desc' => 'Back',
             'primary_btn_url'  => route('home.member.profile'),
             'extra_btn_desc'   => 'Home',
             'extra_btn_url'    => route('home.index'),
