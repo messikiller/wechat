@@ -8,6 +8,9 @@ use Validator;
 use EasyWeChat;
 use App\Services\Auth;
 use App\Models\Member;
+use App\Models\Region;
+use App\Models\Company;
+use App\Models\Hospital;
 
 class MemberController extends HomeController
 {
@@ -16,7 +19,11 @@ class MemberController extends HomeController
         $member_id = Auth::user()->id;
         $member    = Member::find($member_id);
 
-        return view('home.member.profile', compact('member'));
+        $hospitals = Hospital::orderBy('created_at', 'desc')->get();
+        $companies = Company::orderBy('created_at', 'desc')->get();
+        $regions   = Region::orderBy('created_at', 'desc')->get();
+
+        return view('home.member.profile', compact('member', 'hospitals', 'companies', 'regions'));
     }
 
     public function updateProfile(Request $request)

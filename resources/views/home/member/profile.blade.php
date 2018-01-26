@@ -62,9 +62,9 @@
             <div class="weui-cell__bd">
                 <select class="weui-select" name="region_id">
                     <option></option>
-                    <option value="1" {{ $member->region_id == 1 ? 'selected="selected"' : '' }}>中国</option>
-                    <option value="2" {{ $member->region_id == 2 ? 'selected="selected"' : '' }}>美国</option>
-                    <option value="3" {{ $member->region_id == 3 ? 'selected="selected"' : '' }}>英国</option>
+                    @foreach ($regions as $region)
+                        <option value="{{ $region->id }}" {{ $region->id == $member->region_id ? 'selected="selected"' : '' }}>{{ $region->title }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -76,9 +76,9 @@
             <div class="weui-cell__bd">
                 <select class="weui-select" name="company_id">
                     <option></option>
-                    <option value="1" {{ $member->company_id == 1 ? 'selected="selected"' : '' }}>中国</option>
-                    <option value="2" {{ $member->company_id == 2 ? 'selected="selected"' : '' }}>美国</option>
-                    <option value="3" {{ $member->company_id == 3 ? 'selected="selected"' : '' }}>英国</option>
+                    @foreach ($companies as $company)
+                        <option value="{{ $company->id }}" {{ $company->id == $member->company_id ? 'selected="selected"' : '' }}>{{ $company->title }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -88,11 +88,11 @@
                 <label for="" class="weui-label">医院</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="hospital_id" value="{{ $member->hospital_id }}">
+                <select class="weui-select" name="hospital_id">
                     <option></option>
-                    <option value="1" {{ $member->hospital_id == 1 ? 'selected="selected"' : '' }}>中国</option>
-                    <option value="2" {{ $member->hospital_id == 2 ? 'selected="selected"' : '' }}>美国</option>
-                    <option value="3" {{ $member->hospital_id == 3 ? 'selected="selected"' : '' }}>英国</option>
+                    @foreach ($hospitals as $hospital)
+                        <option value="{{ $hospital->id }}" {{ $hospital->id == $member->hospital_id ? 'selected="selected"' : '' }}>{{ $hospital->title }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
