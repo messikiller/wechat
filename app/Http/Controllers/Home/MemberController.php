@@ -9,8 +9,6 @@ use EasyWeChat;
 use App\Services\Auth;
 use App\Models\Member;
 use App\Models\Region;
-use App\Models\Company;
-use App\Models\Hospital;
 
 class MemberController extends HomeController
 {
@@ -19,7 +17,7 @@ class MemberController extends HomeController
         $member_id = Auth::user()->id;
         $member    = Member::find($member_id);
         $regions   = Region::orderBy('created_at', 'desc')->get();
-
+        
         return view('home.member.profile', compact('member', 'regions'));
     }
 
@@ -82,7 +80,7 @@ class MemberController extends HomeController
         $member->company      = $request->company;
         $member->hospital     = $request->hospital;
         $member->address      = $request->address;
-        $member->is_completed = config('define.member.is_compeleted.true.value');
+        $member->is_completed = config('define.member.is_completed.true.value');
 
         $res = $member->save();
         if ($res === false) {

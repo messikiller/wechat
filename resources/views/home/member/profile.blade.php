@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <div class="weui-cell weui-cell_select weui-cell_select-after">
+        <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">公司</label>
             </div>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="weui-cell weui-cell_select weui-cell_select-after">
+        <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label for="" class="weui-label">医院</label>
             </div>
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <div class="weui-cell weui-cell_select weui-cell_select-after">
+        <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label for="" class="weui-label">地址</label>
             </div>
