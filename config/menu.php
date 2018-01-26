@@ -10,9 +10,15 @@ return [
             ],
             [
                 "type" => "view",
-                "name" => "Doctor center（US）",
+                "name" => "Doctor center（ES）",
                 "url"  => env('APP_URL') . '/care/doctor/endoscope'
             ],
+            [
+                "type" => "view",
+                "name" => "Doctor center（US）",
+                "url"  => env('APP_URL') . '/care/doctor/ultrasound'
+            ],
+
             [
                 "type" => "view",
                 "name" => "My Machine",
@@ -22,11 +28,6 @@ return [
                 "type" => "view",
                 "name" => "Distributor center",
                 "url"  => env('APP_URL') . '/care/provider/center'
-            ],
-            [
-                "type" => "view",
-                "name" => "Contract us",
-                "url"  => env('APP_URL') . '/about/contact'
             ],
         ],
     ],
@@ -72,7 +73,12 @@ return [
                 "type" => "view",
                 "name" => "Gloabal Branch",
                 "url"  => env('APP_URL') . '/about/globe'
-            ]
+            ],
+            [
+                "type" => "view",
+                "name" => "Contract us",
+                "url"  => env('APP_URL') . '/about/contact'
+            ],
         ],
     ],
 ];
