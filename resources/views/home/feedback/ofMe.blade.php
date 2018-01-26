@@ -25,14 +25,16 @@
             </div>
         </div>
         <div v-show="selectedTab=='tab2'">
-            @foreach ($feedbacks->where('status', '=', config('define.feedback.status.finished.value')) as $feedback)
-                <a class="weui-cell weui-cell_access" href="javascript:;">
-                    <div class="weui-cell__bd">
-                        <p>{{ $feedback->hsn }}</p>
-                    </div>
-                    <div class="weui-cell__ft">{{ date('Y-m-d', $feedback->created_at) }}</div>
-                </a>
-            @endforeach
+            <div class="weui-cells">
+                @foreach ($feedbacks->where('status', '=', config('define.feedback.status.finished.value')) as $feedback)
+                    <a class="weui-cell weui-cell_access" href="javascript:;">
+                        <div class="weui-cell__bd">
+                            <p>{{ $feedback->hsn }}</p>
+                        </div>
+                        <div class="weui-cell__ft">{{ date('Y-m-d', $feedback->created_at) }}</div>
+                    </a>
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
