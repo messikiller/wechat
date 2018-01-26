@@ -36,8 +36,6 @@ Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group
 
     Route::get('/admin/member/list', 'MemberController@list')->name('admin.member.list');
     Route::get('/admin/member/view/{id}', 'MemberController@view')->name('admin.member.view');
-    Route::get('/admin/member/edit/{id}', 'MemberController@edit')->name('admin.member.edit');
-    Route::post('/admin/member/edit/{id}', 'MemberController@handleEdit')->name('admin.member.edit');
 
     Route::get('/admin/article/list', 'ArticleController@list')->name('admin.article.list');
     Route::get('/admin/article/add', 'ArticleController@add')->name('admin.article.add');

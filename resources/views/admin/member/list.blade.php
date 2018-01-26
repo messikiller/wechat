@@ -76,21 +76,7 @@ var vm = new Vue({
                                 window.location.href = params.row.view_url
                             }
                         }
-                    }, '查看'),
-                    h('Button', {
-                        props: {
-                            type: 'primary',
-                            size: 'small'
-                        },
-                        style: {
-                            marginRight: '5px'
-                        },
-                        on: {
-                            click: () => {
-                                window.location.href = params.row.edit_url
-                            }
-                        }
-                    }, '编辑')
+                    }, '查看')
                 ]);
             }}
         ],
@@ -123,8 +109,7 @@ var vm = new Vue({
                     @endif
                 @endforeach
                 'created_at': '{{ date('Y-m-d', $member->created_at) }}',
-                'view_url': '{{ route('admin.member.view', $member->id) }}',
-                'edit_url': '{{ route('admin.member.edit', $member->id) }}'
+                'view_url': '{{ route('admin.member.view', $member->id) }}'
             }
                 @if (! $loop->last)
                 ,
