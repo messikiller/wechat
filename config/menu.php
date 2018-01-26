@@ -66,12 +66,12 @@ return [
             ],
             [
                 "type" => "view",
-                "name" => "about us",
+                "name" => "About Us",
                 "url"  => env('APP_URL') . '/about/us'
             ],
             [
                 "type" => "view",
-                "name" => "Gloabal Branch",
+                "name" => "Global Branch",
                 "url"  => env('APP_URL') . '/about/globe'
             ],
             [
