@@ -12,10 +12,7 @@ class WechatController extends Controller
     public function serve()
     {
         $app = EasyWeChat::officialAccount();
-
-        $menu = config('menu');
-        $app->menu->create($menu);
-
+        
         $response = $app->server->serve();
 
         return $response;

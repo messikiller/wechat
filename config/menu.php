@@ -1,17 +1,12 @@
 <?php
 return [
     [
-        "type" => "view",
-        "name" => "Home",
-        "url"  => env('APP_URL') . '/home/index'
-    ],
-    [
         "name"       => "Care center",
         "sub_button" => [
             [
                 "type" => "view",
                 "name" => "My information",
-                "url"  => env('APP_URL') . '/home/member/profile'
+                "url"  => env('APP_URL') . '/member/profile'
             ],
             [
                 "type" => "view",
@@ -65,13 +60,18 @@ return [
         "sub_button" => [
             [
                 "type" => "view",
+                "name" => "Home",
+                "url"  => env('APP_URL') . '/home/index'
+            ],
+            [
+                "type" => "view",
                 "name" => "about us",
                 "url"  => env('APP_URL') . '/about/us'
             ],
             [
                 "type" => "view",
-                "name" => "/about/globe",
-                "url"  => env('APP_URL') . '/care/provider/center'
+                "name" => "Gloabal Branch",
+                "url"  => env('APP_URL') . '/about/globe'
             ]
         ],
     ],
