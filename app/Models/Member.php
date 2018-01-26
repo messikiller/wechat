@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Region;
+use App\Models\Hospital;
+use App\Models\Company;
 
 class Member extends Model
 {
@@ -11,6 +14,21 @@ class Member extends Model
     protected $guarded    = [];
 
     public $timestamps = false;
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class, 'region_id', 'id');
+    }
+
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class, 'hospital_id', 'id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
 
     public function isCompleted()
     {

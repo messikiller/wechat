@@ -18,6 +18,13 @@ return [
         ]
     ],
     [
+        'icon'  => 'ribbon-b',
+        'title' => '会员管理',
+        'sub'   => [
+            '会员管理' => 'admin.member.list'
+        ]
+    ],
+    [
         'icon'  => 'ios-paper-outline',
         'title' => '文章管理',
         'sub'   => [
@@ -38,6 +45,15 @@ return [
         'title' => '反馈管理',
         'sub'   => [
             '反馈列表' => 'admin.feedback.list',
+        ]
+    ],
+    [
+        'icon'  => 'gear-b',
+        'title' => '系统管理',
+        'sub'   => [
+            '地区管理' => 'admin.region.list',
+            '公司管理' => 'admin.company.list',
+            '医院管理' => 'admin.hospital.list',
         ]
     ],
 

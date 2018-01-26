@@ -34,6 +34,11 @@ Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group
     Route::get('/admin/user/privilege/manage', 'PrivilegeController@manage')->name('admin.privilege.manage');
     Route::post('/admin/user/privilege/manage', 'PrivilegeController@handleManage')->name('admin.privilege.manage');
 
+    Route::get('/admin/member/list', 'MemberController@list')->name('admin.member.list');
+    Route::get('/admin/member/view/{id}', 'MemberController@view')->name('admin.member.view');
+    Route::get('/admin/member/edit/{id}', 'MemberController@edit')->name('admin.member.edit');
+    Route::post('/admin/member/edit/{id}', 'MemberController@handleEdit')->name('admin.member.edit');
+
     Route::get('/admin/article/list', 'ArticleController@list')->name('admin.article.list');
     Route::get('/admin/article/add', 'ArticleController@add')->name('admin.article.add');
     Route::post('/admin/article/add', 'ArticleController@handleAdd')->name('admin.article.add');
@@ -50,4 +55,22 @@ Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group
     Route::get('/admin/feedback/view/{id}', 'FeedbackController@view')->name('admin.feedback.view');
     Route::get('/admin/feedback/edit/{id}', 'FeedbackController@edit')->name('admin.feedback.edit');
     Route::post('/admin/feedback/edit/{id}', 'FeedbackController@handleEdit')->name('admin.feedback.edit');
+
+    Route::get('/admin/hospital/list', 'HospitalController@list')->name('admin.hospital.list');
+    Route::get('/admin/hospital/add', 'HospitalController@add')->name('admin.hospital.add');
+    Route::post('/admin/hospital/add', 'HospitalController@handleAdd')->name('admin.hospital.add');
+    Route::get('/admin/hospital/edit/{id}', 'HospitalController@edit')->name('admin.hospital.edit');
+    Route::post('/admin/hospital/edit/{id}', 'HospitalController@handleEdit')->name('admin.hospital.edit');
+
+    Route::get('/admin/company/list', 'CompanyController@list')->name('admin.company.list');
+    Route::get('/admin/company/add', 'CompanyController@add')->name('admin.company.add');
+    Route::post('/admin/company/add', 'CompanyController@handleAdd')->name('admin.company.add');
+    Route::get('/admin/company/edit/{id}', 'CompanyController@edit')->name('admin.company.edit');
+    Route::post('/admin/company/edit/{id}', 'CompanyController@handleEdit')->name('admin.company.edit');
+
+    Route::get('/admin/region/list', 'RegionController@list')->name('admin.region.list');
+    Route::get('/admin/region/add', 'RegionController@add')->name('admin.region.add');
+    Route::post('/admin/region/add', 'RegionController@handleAdd')->name('admin.region.add');
+    Route::get('/admin/region/edit/{id}', 'RegionController@edit')->name('admin.region.edit');
+    Route::post('/admin/region/edit/{id}', 'RegionController@handleEdit')->name('admin.region.edit');
 });

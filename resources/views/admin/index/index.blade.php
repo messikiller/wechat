@@ -23,7 +23,7 @@
             <i-col span="3" v-show="showLeft" class="layout-menu-left">
                 <i-menu active-name="1" theme="dark" width="auto" accordion>
                     <div class="layout-logo-left" style="text-align:center;">
-                        <Icon type="ios-gear" size="22"></Icon>&ensp;{{ config('admin.app.title') }}
+                        <Icon type="paper-airplane" size="22"></Icon>&ensp;{{ config('admin.app.title') }}
                     </div>
 
                     @foreach ($tree as $menu)
