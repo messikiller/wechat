@@ -6,17 +6,6 @@
     {{ csrf_field() }}
     <div class="weui-cells__title bar">请填写报修信息（如果机器已无法开机或找不到二维码，<a href="{{ route('home.feedback.manualAdd') }}">在这里手动报修</a>）</div>
     <div class="weui-cells weui-cells_form">
-        <div class="weui-cell weui-cell_vcode">
-            <div class="weui-cell__hd"><label class="weui-label"><span class="required">*&nbsp;</span>处理器SN</label></div>
-            <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" readonly="true" name="hsn" v-model="formData.hsn">
-                <input type="hidden" name="machine_data" v-model="formData.machine_data"/>
-            </div>
-            <div class="weui-cell__ft">
-                <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
-            </div>
-        </div>
-
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd"><label class="weui-label"><span class="required">*&nbsp;</span>故障类型</label></div>
             <div class="weui-cell__bd">
@@ -25,6 +14,17 @@
                         <option value="{{ $type['value'] }}">{{ $type['desc'] }}</option>
                     @endforeach
                 </select>
+            </div>
+        </div>
+
+        <div class="weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd"><label class="weui-label"><span class="required">*&nbsp;</span>处理器SN</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" readonly="true" name="hsn" v-model="formData.hsn">
+                <input type="hidden" name="machine_data" v-model="formData.machine_data"/>
+            </div>
+            <div class="weui-cell__ft">
+                <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
             </div>
         </div>
 
