@@ -27,7 +27,10 @@
                 <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
             </div>
         </div>
+        
+    </div>
 
+    <div class="weui-cells weui-cells_form">
         <div class="weui-cells__title"><span class="required">*&nbsp;</span>故障描述</div>
         <div class="weui-cells weui-cells_form">
             <div class="weui-cell">
