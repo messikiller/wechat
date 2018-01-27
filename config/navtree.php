@@ -52,8 +52,6 @@ return [
         'title' => '系统管理',
         'sub'   => [
             '地区管理' => 'admin.region.list',
-            '公司管理' => 'admin.company.list',
-            '医院管理' => 'admin.hospital.list',
         ]
     ],
 
