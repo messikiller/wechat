@@ -8,7 +8,7 @@
 
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_select weui-cell_select-after">
-            <div class="weui-cell__hd"><label for="" class="weui-label">故障类型</label></div>
+            <div class="weui-cell__hd"><label class="weui-label"><span class="required">*&nbsp;</span>故障类型</label></div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="type" v-model="formData.type">
                     @foreach (config('define.feedback.type') as $type)
@@ -33,7 +33,7 @@
         </div>
 
         <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">SN</label></div>
+            <div class="weui-cell__hd"><label class="weui-label"><span class="required">*&nbsp;</span>SN</label></div>
             <div class="weui-cell__bd">
                 <input class="weui-input" type="text" placeholder="请输入处理器SN号" name="hsn" v-model="formData.hsn">
             </div>
@@ -50,7 +50,7 @@
     <div class="weui-cells__title">镜体信息</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_select weui-cell_select-after">
-            <div class="weui-cell__hd"><label for="" class="weui-label">型号</label></div>
+            <div class="weui-cell__hd"><label class="weui-label">型号</label></div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="emodel" v-model="formData.emodel">
                     @foreach ($ecdkeys as $cdkey)
@@ -105,7 +105,7 @@
         </div>
     </div>
 
-    <div class="weui-cells__title">故障描述</div>
+    <div class="weui-cells__title"><span class="required">*&nbsp;</span>故障描述</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell">
             <div class="weui-cell__bd">
@@ -158,11 +158,8 @@ var vm = new Vue({
         checkFormInput: function () {
             var _res = true;
             var _obj = this.formData;
-            for (var k in _obj) {
-                if (_obj.hasOwnProperty(k) && _obj[k] == '') {
-                    _res = false;
-                    break;
-                }
+            if (_obj.hsn == '' || _obj.description == '') {
+                _res = false;
             }
             return _res;
         },

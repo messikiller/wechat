@@ -20,26 +20,6 @@ class FeedbackController extends HomeController
 
     public function handleAdd(Request $request)
     {
-        $rules = [
-            'hsn' => 'required',
-        ];
-
-        $messages = [
-            'hsn.required' => 'SN number is required'
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if ($validator->fails()) {
-            return view('home.common.message', [
-                'msg_type'         => 'info',
-                'title'            => 'Invalid input options',
-                'detail'           => $validator->errors()->first(),
-                'primary_btn_desc' => 'Back',
-                'primary_btn_url'  => route('home.feedback.add'),
-            ]);
-        }
-
         $feedback = new Feedback;
 
         $feedback->member_id    = Auth::user()->id;

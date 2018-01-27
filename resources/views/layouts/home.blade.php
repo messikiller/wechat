@@ -68,6 +68,10 @@ body {
     font-size: 12px;
     color: #999999;
 }
+
+.required {
+    color: red;
+}
 </style>
 </head>
 <body>
