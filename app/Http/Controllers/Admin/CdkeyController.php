@@ -49,6 +49,7 @@ class CdkeyController extends Controller
         $cdkey = new Cdkey;
 
         $cdkey->title      = $title;
+        $cdkey->type       = $request->type;
         $cdkey->model      = $request->model;
         $cdkey->created_at = time();
 
@@ -83,6 +84,7 @@ class CdkeyController extends Controller
         $cdkey = Cdkey::find($id);
 
         $cdkey->title = $title;
+        $cdkey->type  = $request->type;
         $cdkey->model = $request->model;
 
         $res = $cdkey->save();

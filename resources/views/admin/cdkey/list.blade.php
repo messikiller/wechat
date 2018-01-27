@@ -64,6 +64,7 @@ var vm = new Vue({
         header: [
             {title: '#',       key: 'index', width: '100'},
             {title: '识别码名称', key: 'title'},
+            {title: '类型', key: 'type_desc'},
             {title: '机型', key: 'model'},
             {title: '创建时间', key: 'created_at'},
             {title: '操作', key: 'action', width: '400', render: (h, params) => {
@@ -90,6 +91,12 @@ var vm = new Vue({
             {
                 'index': '{{ $list->perPage() * ($list->currentPage() - 1) + $loop->iteration }}',
                 'title': '{{ $cdkey->title }}',
+                @foreach (config('define.cdkey.type') as $type)
+                    @if ($type['value'] == $cdkey->type)
+                        'type_desc': '{{ $type['desc'] }}',
+                        @break
+                    @endif
+                @endforeach
                 'model': '{{ $cdkey->model }}',
                 'created_at': '{{ date('Y-m-d', $cdkey->created_at) }}',
                 'edit_url': '{{ route('admin.cdkey.edit', $cdkey->id) }}'

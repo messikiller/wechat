@@ -15,8 +15,10 @@ Route::namespace('Home')->middleware('wechat')->group(function () {
     Route::get('/member/machine',  'MemberController@machine')->name('home.member.machine');
     Route::post('/member/machine', 'MemberController@updateMachine')->name('home.member.machine');
 
-    Route::get('/feedback/add',   'FeedbackController@add')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.add');
-    Route::post('/feedback/add',  'FeedbackController@handleAdd')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.add');
+    Route::get('/feedback/add', 'FeedbackController@add')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.add');
+    Route::post('/feedback/add', 'FeedbackController@handleAdd')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.add');
+    Route::get('/feedback/manual/add', 'FeedbackController@manualAdd')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.manualAdd');
+    Route::post('/feedback/manual/add', 'FeedbackController@handleManualAdd')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.manualAdd');
     Route::get('/feedback/of/me', 'FeedbackController@ofMe')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.ofMe');
 
     Route::get('/care/doctor/endoscope', 'CareController@endoDoctor')->middleware('checkMemberProfile:T|D|D-T|D|E-T|P|E')->name('home.care.endoDoctor');

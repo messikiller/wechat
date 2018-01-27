@@ -30,6 +30,10 @@ class CheckMemberProfile
         $member = Auth::user();
         $rules  = explode('-', $rule);
 
+        if (App()->isLocal()) {
+            return $next($request);
+        }
+
         $res = false;
         foreach ($rules as $rule)
         {

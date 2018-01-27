@@ -17,6 +17,13 @@
                 <Form-item label="名称" prop="title">
                     <i-input type="text" v-model="formCustom.title" name="title"></i-input>
                 </Form-item>
+                <Form-item label="类型" prop="type">
+                    <i-select v-model="formCustom.type" name="type">
+                        @foreach (config('define.cdkey.type') as $type)
+                            <i-option value="{{ $type['value'] }}">{{ $type['desc'] }}</i-option>
+                        @endforeach
+                    </i-select>
+                </Form-item>
                 <Form-item label="机型" prop="model">
                     <i-input type="text" v-model="formCustom.model" name="model"></i-input>
                 </Form-item>
@@ -45,10 +52,14 @@ new Vue({
         return {
             formCustom: {
                 title: '{{ $cdkey->title }}',
+                type:  '{{ $cdkey->type }}',
                 model: '{{ $cdkey->model }}'
             },
             ruleCustom: {
                 title: [
+                    {validator: validateGeneral, trigger: 'blur'}
+                ],
+                type: [
                     {validator: validateGeneral, trigger: 'blur'}
                 ],
                 model: [

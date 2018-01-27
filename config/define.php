@@ -1,7 +1,7 @@
 <?php
 return [
     'user_session_key' => 'user',
-    
+
     'member' => [
         'is_completed' => [
             'false' => ['value' => 0, 'desc' => '否'],
@@ -34,6 +34,14 @@ return [
         'is_admin' => [
             'true'  => ['value' => 1, 'desc' => '是'],
             'false' => ['value' => 0, 'desc' => '否'],
+        ],
+    ],
+
+    'cdkey' => [
+        'type' => [
+            'lens'      => ['value' => 0, 'desc' => '镜体'],
+            'processor' => ['value' => 1, 'desc' => '处理器'],
+            'light'     => ['value' => 2, 'desc' => '光源'],
         ],
     ],
 
