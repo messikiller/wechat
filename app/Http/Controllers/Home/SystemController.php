@@ -39,7 +39,7 @@ class SystemController extends HomeController
 
         $member->save();
 
-        Auh::reload();
+        Auth::reload();
         App::setLocale($lang);
 
         return redirect()->route('home.index');
