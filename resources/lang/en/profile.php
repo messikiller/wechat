@@ -6,7 +6,7 @@ return [
     'gender'        => 'gender',
     'mail'          => 'email',
     'mobile'        => 'phone',
-    'region'        => 'country/region',
+    'region'        => 'region',
     'company'       => 'company',
     'hospital'      => 'hospital',
     'address'       => 'address',

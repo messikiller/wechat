@@ -27,7 +27,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
-                    @lang('profile.role')
+                    @lang('profile.name')
                 </label>
             </div>
             <div class="weui-cell__bd">
