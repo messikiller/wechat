@@ -5,11 +5,15 @@
 <form action="{{ url()->current() }}" method="post" ref="dataForm">
     {{ csrf_field() }}
 
-    <div class="weui-cells__title bar">请选择您期望的系统语言</div>
+    <div class="weui-cells__title bar">
+        @lang('language.notice_before')
+    </div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label class="weui-label">语言</label>
+                <label class="weui-label">
+                    @lang('language.select_language')
+                </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="language" v-model="formCustom.language">

@@ -5,11 +5,15 @@
 <form action="{{ url()->current() }}" method="post">
     {{ csrf_field() }}
 
-    <div class="weui-cells__title bar">请完善您持有的机器信息</div>
+    <div class="weui-cells__title bar">
+        @lang('my_machine.notice_before')
+    </div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">机器类型</label>
+                <label class="weui-label">
+                    @lang('my_machine.machine_type')
+                </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="machine_type"  v-model="formCustom.machine_type">
@@ -28,7 +32,7 @@
                 <label class="weui-label">SN</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请扫描机器上的二维码信息" ref="snInput" readonly="true" name="machine_sn" value="{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}">
+                <input class="weui-input" type="text" placeholder="{{ __('my_machine.scan_machine_qrcode') }}" ref="snInput" readonly="true" name="machine_sn" value="{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}">
                 <input type="hidden" name="machine_data" ref="machineDataInput" value="{{ $member->machine_data }}">
             </div>
             <div class="weui-cell__ft">
