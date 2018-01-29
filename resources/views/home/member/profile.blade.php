@@ -4,12 +4,16 @@
 <form action="{{ url()->current() }}" method="post">
     {{ csrf_field() }}
 
-    <div class="weui-cells__title bar">请完善您的个人资料</div>
+    <div class="weui-cells__title bar">
+        @lang('profile.notice_before')
+    </div>
     <div class="weui-cells weui-cells_form">
 
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label class="weui-label">角色</label>
+                <label class="weui-label">
+                    @lang('profile.role')
+                </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="type">
@@ -21,15 +25,21 @@
         </div>
 
         <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+            <div class="weui-cell__hd">
+                <label class="weui-label">
+                    @lang('profile.role')
+                </label>
+            </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入姓名" value="{{ $member->nickname }}" name="nickname"/>
+                <input class="weui-input" type="text" value="{{ $member->nickname }}" name="nickname"/>
             </div>
         </div>
 
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">性别</label>
+                <label class="weui-label">
+                    @lang('profile.gender')
+                </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="sex">
@@ -40,24 +50,32 @@
         </div>
 
         <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
+            <div class="weui-cell__hd">
+                <label class="weui-label">
+                    @lang('profile.mail')
+                </label>
+            </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入合法的电子邮箱" name="mail" value="{{ $member->mail }}"/>
+                <input class="weui-input" type="text" name="mail" value="{{ $member->mail }}"/>
             </div>
         </div>
 
         <div class="weui-cell">
             <div class="weui-cell__hd">
-                <label class="weui-label">手机号</label>
+                <label class="weui-label">
+                    @lang('profile.mobile')
+                </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="tel" placeholder="请输入" name="mobile" value="{{ $member->mobile }}"/>
+                <input class="weui-input" type="tel" name="mobile" value="{{ $member->mobile }}"/>
             </div>
         </div>
 
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">国家/地区</label>
+                <label class="weui-label">
+                    @lang('profile.region')
+                </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="region_id">
@@ -71,33 +89,41 @@
 
         <div class="weui-cell">
             <div class="weui-cell__hd">
-                <label class="weui-label">公司</label>
+                <label class="weui-label">
+                    @lang('profile.company')
+                </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入公司名称" name="company" value="{{ $member->company }}"/>
+                <input class="weui-input" type="text" name="company" value="{{ $member->company }}"/>
             </div>
         </div>
 
         <div class="weui-cell">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">医院</label>
+                <label class="weui-label">
+                    @lang('profile.hospital')
+                </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入医院名称" name="hospital" value="{{ $member->hospital }}"/>
+                <input class="weui-input" type="text" name="hospital" value="{{ $member->hospital }}"/>
             </div>
         </div>
 
         <div class="weui-cell">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">地址</label>
+                <label class="weui-label">
+                    @lang('profile.address')
+                </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入详细地址" name="address" value="{{ $member->address }}"/>
+                <input class="weui-input" type="text" name="address" value="{{ $member->address }}"/>
             </div>
         </div>
 
     </div>
-    <div class="weui-cells__tips">注意：医生不需要填写公司，代理商不需要填写医院</div>
+    <div class="weui-cells__tips">
+        @lang('profile.notice_after')
+    </div>
 
     <div class="weui-btn-area">
         <button type="submit" class="weui-btn weui-btn_primary">Submit</button>
