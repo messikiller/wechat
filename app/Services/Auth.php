@@ -36,9 +36,9 @@ class Auth
         self::set($member);
     }
 
-    public function getConfig($key)
+    public static function getConfig($key)
     {
-        $config = json_decode(self::user(), true);
+        $config = json_decode(self::user()->config, true);
 
         return empty($config[$key]) ? false : $config[$key];
     }

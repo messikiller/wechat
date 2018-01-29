@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App;
+use App\Services\Auth;
 
 class CheckLocale
 {
