@@ -12,11 +12,7 @@ class SystemController extends HomeController
 {
     public function language()
     {
-        $uid    = Auth::user()->id;
-        $member = Member::find($uid);
-
-        $config = json_decode($member->config, true);
-        $language = isset($config['language']) ? $config['language'] : '';
+        $language = App::getLocale();
 
         return view('home.system.language', compact('language'));
     }
@@ -40,7 +36,8 @@ class SystemController extends HomeController
         $member->save();
 
         Auth::reload();
-        App::setLocale($lang);
+
+        $request->session()->put(config('define.user_locale_session'), $lang);
 
         return redirect()->route('home.index');
     }

@@ -3,7 +3,7 @@
 Route::any('/wechat',                'WechatController@serve');
 Route::any('/wechat/oauth/callback', 'WechatController@oauthCallback');
 
-Route::namespace('Home')->middleware('wechat')->group(function () {
+Route::namespace('Home')->middleware('wechat', 'checkLocale')->group(function () {
     Route::get('/home/index', 'IndexController@index')->name('home.index');
     Route::get('/home/index/article/{id}', 'IndexController@viewArticle')->name('home.index.article');
 

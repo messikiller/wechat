@@ -1,6 +1,7 @@
 <?php
 return [
     'user_session_key' => 'user',
+    'user_locale_session' => 'locale',
 
     'member' => [
         'is_completed' => [
