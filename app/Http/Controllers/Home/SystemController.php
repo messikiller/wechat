@@ -28,14 +28,14 @@ class SystemController extends HomeController
         $uid    = Auth::user()->id;
         $member = Member::find($uid);
 
-        $config = $member->config;
+        $config = json_decode($member->config, true);
         if (empty($config)) {
             $config = ['language' => $lang];
         } else {
             $config['language'] = $lang;
         }
 
-        $member->config = $config;
+        $member->config = json_encode($config);
 
         $member->save();
 
