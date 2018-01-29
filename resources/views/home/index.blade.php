@@ -11,14 +11,16 @@
     </div>
 </div>
 
-<div class="bar back-gray">会员中心</div>
+<div class="bar back-gray">
+    @lang('index.member_center')
+</div>
 <div class="weui-grids">
     <a href="{{ route('home.member.profile') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-person primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            个人资料
+            @lang('index.profile')
         </p>
     </a>
     <a href="{{ route('home.feedback.ofMe') }}" class="weui-grid">
@@ -26,7 +28,7 @@
             <i class="icon ion-chatbubble-working primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            我的报修
+            @lang('index.my_repair')
         </p>
     </a>
     <a href="{{ route('home.system.language') }}" class="weui-grid">
@@ -34,7 +36,7 @@
             <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            设置语言
+            @lang('index.set_language')
         </p>
     </a>
     <a href="{{ route('home.feedback.add') }}" class="weui-grid">
@@ -42,7 +44,7 @@
             <i class="icon ion-chatbox-working primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            设备报修
+            @lang('index.repair')
         </p>
     </a>
     <a href="{{ route('home.member.machine') }}" class="weui-grid">
@@ -50,19 +52,21 @@
             <i class="icon ion-android-desktop primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            我的机器
+            @lang('index.my_machine')
         </p>
     </a>
 </div>
 
-<div class="bar back-gray">维修中心</div>
+<div class="bar back-gray">
+    @lang('index.care_center')
+</div>
 <div class="weui-grids">
     <a href="{{ route('home.care.ultraDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-settings primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            超声医生
+            @lang('index.ultrasound_doctor')
         </p>
     </a>
     <a href="{{ route('home.care.endoDoctor') }}" class="weui-grid">
@@ -70,7 +74,7 @@
             <i class="icon ion-hammer primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            内窥镜医生
+            @lang('index.endoscope_doctor')
         </p>
     </a>
     <a href="{{ route('home.care.providerCenter') }}" class="weui-grid">
@@ -78,19 +82,21 @@
             <i class="icon ion-person-stalker primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            代理商中心
+            @lang('index.distributor_center')
         </p>
     </a>
 </div>
 
-<div class="bar back-gray">技术支持</div>
+<div class="bar back-gray">
+    @lang('index.technical_support')
+</div>
 <div class="weui-grids">
     <a href="{{ route('home.support.news') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-ios-paper primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            新闻
+            @lang('index.news')
         </p>
     </a>
     <a href="{{ route('home.support.ultrasound') }}" class="weui-grid">
@@ -98,7 +104,7 @@
             <i class="icon ion-android-volume-up primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            超声中心
+            @lang('index.ultrasound_center')
         </p>
     </a>
     <a href="{{ route('home.support.endoscope') }}" class="weui-grid">
@@ -106,7 +112,7 @@
             <i class="icon ion-social-instagram-outline primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            内窥镜中心
+            @lang('index.endoscope_center')
         </p>
     </a>
     <a href="{{ route('home.support.endoMaintain') }}" class="weui-grid">
@@ -114,19 +120,21 @@
             <i class="icon ion-medkit primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            内窥镜保养
+            @lang('index.endoscope_maintain')
         </p>
     </a>
 </div>
 
-<div class="bar back-gray">关于开立</div>
+<div class="bar back-gray">
+    @lang('index.about_sonoscape')
+</div>
 <div class="weui-grids">
     <a href="{{ route('home.about.us') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
             <i class="icon ion-ribbon-b primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            关于我们
+            @lang('index.about_us')
         </p>
     </a>
     <a href="{{ route('home.about.globe') }}" class="weui-grid">
@@ -134,7 +142,7 @@
             <i class="icon ion-android-globe primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            全球分支
+            @lang('index.global_branch')
         </p>
     </a>
     <a href="{{ route('home.about.contact') }}" class="weui-grid">
@@ -142,7 +150,7 @@
             <i class="icon ion-social-whatsapp primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
-            联系我们
+            @lang('index.contact_us')
         </p>
     </a>
 </div>

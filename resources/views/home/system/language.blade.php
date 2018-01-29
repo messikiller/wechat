@@ -2,27 +2,26 @@
 
 @section('content')
 
-<form action="{{ url()->current() }}" method="post">
+<form action="{{ url()->current() }}" method="post" ref="dataForm">
     {{ csrf_field() }}
 
     <div class="weui-cells__title bar">请选择您期望的系统语言</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">语言</label>
+                <label class="weui-label">语言</label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="language" v-model="formCustom.language">
-                    <option value="chinese">汉语</option>>
-                    <option value="english">English</option>>
-                    <option value="spanish">Español</option>>
+                    <option value="zh">汉语</option>
+                    <option value="en">English</option>
                 </select>
             </div>
         </div>
     </div>
 
     <div class="weui-btn-area">
-        <button type="submit" class="weui-btn weui-btn_primary">Submit</button>
+        <a href="javascript:;" class="weui-btn weui-btn_primary" @click="clickSubmitBtn">Submit</a>
         <a href="{{ route('home.index') }}" class="weui-btn weui-btn_default">Home</a>
     </div>
 
@@ -36,10 +35,13 @@ var vm = new Vue({
     el: '#app',
     data: {
         formCustom: {
-            language: ''
+            language: '{{ $language }}'
         }
     },
     methods: {
+        clickSubmitBtn: function () {
+            this.$refs.dataForm.submit();
+        }
     }
 });
 </script>
