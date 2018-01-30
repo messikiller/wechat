@@ -1,5 +1,5 @@
 <?php
 return [
-    'notice_before'   => 'Please select your language',
-    'select_language' => 'Language',
+    'notice_before'   => 'Пожалуйста, выберите язык',
+    'select_language' => 'язык',
 ];

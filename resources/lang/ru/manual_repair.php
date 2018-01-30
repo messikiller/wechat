@@ -1,7 +1,7 @@
 <?php
 return [
     'notice_before'  => 'Заполните информации гарантийного ремонта',
-    'faulty_type'    => 'Faulty Type',
+    'faulty_type'    => 'Типов неисправностей',
     'processor_info' => 'Процессор',
     'model'          => 'Модель',
     'softversion'    => 'Версия программы',
