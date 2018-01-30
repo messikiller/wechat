@@ -3,13 +3,19 @@
 @section('content')
     <div class="weui-flex tab-container">
         <div class="weui-flex__item">
-            <div class="tab" :class="selectedTabIndex==1?'tab-active':''" @click="clickTab(1)">全部反馈</div>
+            <div class="tab" :class="selectedTabIndex==1?'tab-active':''" @click="clickTab(1)">
+                @lang('my_repair.all_feedback')
+            </div>
         </div>
         <div class="weui-flex__item">
-            <div class="tab" :class="selectedTabIndex==2?'tab-active':''" @click="clickTab(2)">处理中</div>
+            <div class="tab" :class="selectedTabIndex==2?'tab-active':''" @click="clickTab(2)">
+                @lang('my_repair.processing_feedback')
+            </div>
         </div>
         <div class="weui-flex__item">
-            <div class="tab" :class="selectedTabIndex==3?'tab-active':''" @click="clickTab(3)">已处理</div>
+            <div class="tab" :class="selectedTabIndex==3?'tab-active':''" @click="clickTab(3)">
+                @lang('my_repair.processed_feedback')
+            </div>
         </div>
     </div>
     <div v-show="selectedTabIndex==1">
