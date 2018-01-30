@@ -52,7 +52,7 @@ body {
 }
 
 .primary-color {
-    color: #00B5AD;
+    color: #03a099;
 }
 
 .back-white {
@@ -71,6 +71,24 @@ body {
 
 .required {
     color: red;
+}
+
+.tab-container {
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    line-height: 25px;
+    text-align: center;
+    margin: 0 20px;
+    padding: 25px 0 10px 0;
+    font-size: 14px;
+}
+
+.tab-active {
+    margin-bottom: -3px;
+    border-bottom: 3px solid #03a099;
+    color: #03a099;
 }
 </style>
 </head>

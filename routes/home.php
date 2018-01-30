@@ -20,6 +20,7 @@ Route::namespace('Home')->middleware('wechat', 'checkLocale')->group(function ()
     Route::get('/feedback/manual/add', 'FeedbackController@manualAdd')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.manualAdd');
     Route::post('/feedback/manual/add', 'FeedbackController@handleManualAdd')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.manualAdd');
     Route::get('/feedback/of/me', 'FeedbackController@ofMe')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.ofMe');
+    Route::get('/feedback/view/{id}', 'FeedbackController@view')->middleware('checkMemberProfile:T|*|*')->name('home.feedback.view');
 
     Route::get('/care/doctor/endoscope', 'CareController@endoDoctor')->middleware('checkMemberProfile:T|D|D-T|D|E-T|P|E')->name('home.care.endoDoctor');
     Route::get('/care/doctor/ultrasound', 'CareController@ultraDoctor')->middleware('checkMemberProfile:T|D|D-T|D|U-T|P|U')->name('home.care.ultraDoctor');

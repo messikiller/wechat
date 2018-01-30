@@ -132,4 +132,13 @@ class FeedbackController extends HomeController
 
         return view('home.feedback.ofMe', compact('feedbacks'));
     }
+
+    public function view($id)
+    {
+        $feedback    = Feedback::find($id);
+        $machineData = json_decode($feedback->machine_data, true);
+        $cdkeyIdx    = Cdkey::orderBy('created_at', 'desc')->get()->keyBy('title');
+
+        return view('home.feedback.view', compact('feedback', 'machineData', 'cdkeyIdx'));
+    }
 }
