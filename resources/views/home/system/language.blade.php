@@ -19,6 +19,7 @@
                 <select class="weui-select" name="language" v-model="formCustom.language">
                     <option value="zh">汉语</option>
                     <option value="en">English</option>
+                    <option value="ru">русский</option>
                 </select>
             </div>
         </div>

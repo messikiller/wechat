@@ -88,7 +88,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入镜体软件版本" name="eversion" v-model="formData.eversion">
+                <input class="weui-input" type="text" name="eversion" v-model="formData.eversion">
             </div>
         </div>
     </div>
