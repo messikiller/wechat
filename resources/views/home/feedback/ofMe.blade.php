@@ -57,6 +57,10 @@
             @endforeach
         </div>
     </div>
+
+    <div class="weui-btn-area">
+        <a href="{{ route('home.index') }}" class="weui-btn btn-primary">Home</a>
+    </div>
 @endsection
 
 @section('script')

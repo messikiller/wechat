@@ -42,7 +42,7 @@
     </div>
 
     <div class="weui-btn-area">
-        <button type="submit" class="weui-btn weui-btn_primary">Submit</button>
+        <button type="submit" class="weui-btn btn-primary">Submit</button>
         <a href="{{ route('home.index') }}" class="weui-btn weui-btn_default">Home</a>
     </div>
 

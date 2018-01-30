@@ -55,6 +55,15 @@ body {
     color: #03a099;
 }
 
+.btn-primary {
+    background-color: #03a099;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #027772;
+}
+
 .back-white {
     background-color: #ffffff;
 }

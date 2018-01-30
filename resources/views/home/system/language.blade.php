@@ -26,7 +26,7 @@
     </div>
 
     <div class="weui-btn-area">
-        <a href="javascript:;" class="weui-btn weui-btn_primary" @click="clickSubmitBtn">Submit</a>
+        <a href="javascript:;" class="weui-btn btn-primary" @click="clickSubmitBtn">Submit</a>
         <a href="{{ route('home.index') }}" class="weui-btn weui-btn_default">Home</a>
     </div>
 

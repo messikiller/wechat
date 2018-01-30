@@ -126,7 +126,7 @@
     </div>
 
     <div class="weui-btn-area">
-        <button type="submit" class="weui-btn weui-btn_primary">Submit</button>
+        <button type="submit" class="weui-btn btn-primary">Submit</button>
         <a class="weui-btn weui-btn_default" href="{{ route('home.index') }}">Home</a>
     </div>
 </form>

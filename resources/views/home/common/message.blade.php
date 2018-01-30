@@ -9,7 +9,7 @@
         </div>
         <div class="weui-msg__opr-area">
             <p class="weui-btn-area">
-                <a href="{{ empty($primary_btn_url) ? '' : $primary_btn_url }}" class="weui-btn weui-btn_primary">{{ empty($primary_btn_desc) ? '' : $primary_btn_desc }}</a>
+                <a href="{{ empty($primary_btn_url) ? '' : $primary_btn_url }}" class="weui-btn btn-primary">{{ empty($primary_btn_desc) ? '' : $primary_btn_desc }}</a>
                 <a href="{{ empty($extra_btn_url) ? '' : $extra_btn_url }}" class="weui-btn weui-btn_default">{{ empty($extra_btn_desc) ? '' : $extra_btn_desc }}</a>
             </p>
         </div>
