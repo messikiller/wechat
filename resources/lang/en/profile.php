@@ -10,5 +10,5 @@ return [
     'company'       => 'Company',
     'hospital'      => 'Hospital',
     'address'       => 'Address',
-    'notice_after'  => 'Notice: doctor don\'t need to fill company, distributor don\'t need fill hospital',
+    'notice_after'  => 'Notice：Doctor don\'t need to fill company information. Distributor don\'t need to fill hospital information',
 ];

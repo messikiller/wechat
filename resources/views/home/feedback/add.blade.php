@@ -7,7 +7,7 @@
     <div class="weui-cells__title bar">
         @lang('repair.notice_before')
         ，
-        <a href="{{ route('home.feedback.manualAdd') }}">在这里手动报修</a>）</div>
+        <a href="{{ route('home.feedback.manualAdd') }}">{{ __('repair.here_manual_feedback') }}</a>）</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
