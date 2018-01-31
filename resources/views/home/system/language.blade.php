@@ -17,7 +17,7 @@
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="language" v-model="formCustom.language">
-                    <option value="zh">汉语</option>
+                    <option value="zh">简体中文</option>
                     <option value="en">English</option>
                     <option value="ru">русский</option>
                     <option value="es">Español</option>
