@@ -12,7 +12,7 @@
                 <em class="weui-form-preview__value">
                     @foreach (config('define.feedback.status') as $status)
                         @if ($status['value'] == $feedback->status)
-                            {{ $status['desc'] }}
+                            {{ __($status['trans']) }}
                             @break
                         @endif
                     @endforeach
