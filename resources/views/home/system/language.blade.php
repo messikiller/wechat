@@ -20,6 +20,7 @@
                     <option value="zh">汉语</option>
                     <option value="en">English</option>
                     <option value="ru">русский</option>
+                    <option value="es">Español</option>
                 </select>
             </div>
         </div>
