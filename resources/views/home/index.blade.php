@@ -63,7 +63,7 @@
 <div class="weui-grids">
     <a href="{{ route('home.care.ultraDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-settings primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-volume-high primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             @lang('index.ultrasound_doctor')
@@ -71,7 +71,7 @@
     </a>
     <a href="{{ route('home.care.endoDoctor') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-hammer primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-social-instagram primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             @lang('index.endoscope_doctor')
