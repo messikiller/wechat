@@ -21,7 +21,7 @@
                         @if ($key == 'default')
                             <option value="{{ $type['value'] }}"></option>
                         @else
-                            <option value="{{ $type['value'] }}">{{ $type['desc'] }}</option>
+                            <option value="{{ $type['value'] }}">{{ __($type['trans']) }}</option>
                         @endif
                     @endforeach
                 </select>

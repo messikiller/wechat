@@ -12,13 +12,14 @@
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.role')
                 </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="type">
                     @foreach (config('define.member.type') as $type)
-                        <option value="{{ $type['value'] }}" {{ $member->type == $type['value']  ? 'selected="selected"' : '' }}>{{ $type['desc'] }}</option>
+                        <option value="{{ $type['value'] }}" {{ $member->type == $type['value']  ? 'selected="selected"' : '' }}>{{ __($type['trans']) }}</option>
                     @endforeach
                 </select>
             </div>
@@ -27,6 +28,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.name')
                 </label>
             </div>
@@ -38,13 +40,14 @@
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.gender')
                 </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="sex">
                     @foreach (config('define.member.sex') as $sex)
-                        <option value="{{ $sex['value'] }}" {{ $member->sex == $sex['value'] ? 'selected="selected"' : '' }}>{{ $sex['desc'] }}</option>
+                        <option value="{{ $sex['value'] }}" {{ $member->sex == $sex['value'] ? 'selected="selected"' : '' }}>{{ __($sex['trans']) }}</option>
                     @endforeach
                 </select>
             </div>
@@ -53,6 +56,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.mail')
                 </label>
             </div>
@@ -64,6 +68,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.mobile')
                 </label>
             </div>
@@ -75,12 +80,12 @@
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.region')
                 </label>
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="region_id">
-                    <option></option>
                     @foreach ($regions as $region)
                         <option value="{{ $region->id }}" {{ $region->id == $member->region_id ? 'selected="selected"' : '' }}>{{ $region->title }}</option>
                     @endforeach
@@ -113,6 +118,7 @@
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('profile.address')
                 </label>
             </div>

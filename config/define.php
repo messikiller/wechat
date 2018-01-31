@@ -5,48 +5,48 @@ return [
 
     'member' => [
         'is_completed' => [
-            'false' => ['value' => 0, 'desc' => translate('config.false')],
-            'true'  => ['value' => 1, 'desc' => translate('config.true')],
+            'false' => ['value' => 0, 'desc' => '否', 'trans' => 'config.false'],
+            'true'  => ['value' => 1, 'desc' => '是', 'trans' => 'config.true'],
         ],
         'sex' => [
-            ['value' => 0, 'desc' => translate('config.male')],
-            ['value' => 1, 'desc' => translate('config.female')],
+            'male'   => ['value' => 0, 'desc' => '男', 'trans' => 'config.male'],
+            'female' => ['value' => 1, 'desc' => '女', 'trans' => 'config.female'],
         ],
         'type' => [
-            'provider' => ['value' => 0, 'desc' => translate('config.doctor')],
-            'doctor'   => ['value' => 1, 'desc' => translate('config.distributor')],
+            'provider' => ['value' => 0, 'desc' => '代理商', 'trans' => 'config.doctor'],
+            'doctor'   => ['value' => 1, 'desc' => '医生', 'trans' => 'config.distributor'],
         ],
         'machine_type' => [
-            'default'    => ['value' => 0, 'desc' => translate('config.unknown')],
-            'endoscope'  => ['value' => 1, 'desc' => translate('config.endoscope')],
-            'ultrasound' => ['value' => 2, 'desc' => translate('config.ultrasound')],
+            'default'    => ['value' => 0, 'desc' => '未知', 'trans' => 'config.unknown'],
+            'endoscope'  => ['value' => 1, 'desc' => '内窥镜', 'trans' => 'config.endoscope'],
+            'ultrasound' => ['value' => 2, 'desc' => '超声', 'trans' => 'config.ultrasound'],
         ],
     ],
 
     'feedback' => [
         'type' => [
-            'unknown' => ['value' => 0, 'desc' => translate('config.unknown')],
-            'soft'    => ['value' => 1, 'desc' => translate('config.soft_faulty')],
-            'hard'    => ['value' => 2, 'desc' => translate('config.hard_faulty')],
+            'unknown' => ['value' => 0, 'desc' => '未知', 'trans' => 'config.unknown'],
+            'soft'    => ['value' => 1, 'desc' => '软件故障', 'trans' => 'config.soft_faulty'],
+            'hard'    => ['value' => 2, 'desc' => '硬件故障', 'trans' => 'config.hard_faulty'],
         ],
         'status' => [
-            'processing' => ['value' => 0, 'desc' => translate('config.processing')],
-            'finished'   => ['value' => 1, 'desc' => translate('config.finished')],
+            'processing' => ['value' => 0, 'desc' => '处理中', 'trans' => 'config.processing'],
+            'finished'   => ['value' => 1, 'desc' => '已处理', 'trans' => 'config.finished'],
         ]
     ],
 
     'user' => [
         'is_admin' => [
-            'true'  => ['value' => 1, 'desc' => translate('config.true')],
-            'false' => ['value' => 0, 'desc' => translate('config.false')],
+            'false' => ['value' => 0, 'desc' => '否', 'trans' => 'config.false'],
+            'true'  => ['value' => 1, 'desc' => '是', 'trans' => 'config.true'],
         ],
     ],
 
     'cdkey' => [
         'type' => [
-            'lens'      => ['value' => 0, 'desc' => translate('config.endoscope')],
-            'processor' => ['value' => 1, 'desc' => translate('config.processor')],
-            'light'     => ['value' => 2, 'desc' => translate('config.light_source')],
+            'lens'      => ['value' => 0, 'desc' => '镜体', 'trans' => 'config.endoscope'],
+            'processor' => ['value' => 1, 'desc' => '处理器', 'trans' => 'config.processor'],
+            'light'     => ['value' => 2, 'desc' => '光源', 'trans' => 'config.light_source'],
         ],
     ],
 

@@ -19,7 +19,7 @@
             <div class="weui-cell__bd">
                 <select class="weui-select" name="type" v-model="formData.type">
                     @foreach (config('define.feedback.type') as $type)
-                        <option value="{{ $type['value'] }}">{{ $type['desc'] }}</option>
+                        <option value="{{ $type['value'] }}">{{ __($type['trans']) }}</option>
                     @endforeach
                 </select>
             </div>

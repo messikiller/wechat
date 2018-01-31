@@ -20,4 +20,8 @@
             </a>
         @endforeach
     </div>
+
+    <div class="weui-btn-area">
+        <a href="{{ route('home.index') }}" @click="clickSubmitBtn" class="weui-btn btn-primary">Home</a>
+    </div>
 @endsection
