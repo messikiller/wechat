@@ -129,8 +129,8 @@ class PrivilegeController extends AdminController
                     'privilege_id' => $add_id,
                     'created_at'   => time()
                 ];
-                UserPrivilege::insert($inserts);
             }
+            UserPrivilege::insert($inserts);
         }
 
         $user = User::find($uid);
