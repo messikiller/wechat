@@ -25,7 +25,7 @@
     </a>
     <a href="{{ route('home.feedback.ofMe') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-chatbubble-working primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-android-chat primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             @lang('index.my_repair')
@@ -49,7 +49,7 @@
     </a>
     <a href="{{ route('home.member.machine') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-android-desktop primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-android-laptop primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             @lang('index.my_machine')
@@ -79,7 +79,7 @@
     </a>
     <a href="{{ route('home.care.providerCenter') }}" class="weui-grid">
         <div class="weui-grid__icon text-center">
-            <i class="icon ion-person-stalker primary-color" style="font-size: 24px;"></i>
+            <i class="icon ion-android-contacts primary-color" style="font-size: 24px;"></i>
         </div>
         <p class="weui-grid__label">
             @lang('index.distributor_center')
