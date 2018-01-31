@@ -43,8 +43,9 @@
             </div>
             <div class="weui-cell__bd">
                 <select class="weui-select" name="sex">
-                    <option value="1" {{ $member->sex == 1 ? 'selected="selected"' : '' }}>Male</option>
-                    <option value="2" {{ $member->sex == 2 ? 'selected="selected"' : '' }}>Female</option>
+                    @foreach (config('define.member.sex') as $sex)
+                        <option value="{{ $sex['value'] }}" {{ $member->sex == $sex['value'] ? 'selected="selected"' : '' }}>{{ $sex['desc'] }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
