@@ -82,10 +82,12 @@ class CheckMemberProfile
         if (! $ret) {
             $this->page = [
                 'msg_type'         => 'info',
-                'title'            => 'Forbidden',
-                'detail'           => 'Access Denied for your profile is completed or not',
-                'primary_btn_desc' => 'Home',
-                'primary_btn_url'  => route('home.index'),
+                'title'            => 'Profile Incomplete',
+                'detail'           => 'Please complete your profile',
+                'primary_btn_desc' => 'My Information',
+                'primary_btn_url'  => route('home.member.profile'),
+                'extra_btn_desc'   => 'Home',
+                'extra_btn_url'    => route('home.index'),
             ];
         }
 
@@ -118,10 +120,12 @@ class CheckMemberProfile
         if (! $ret) {
             $this->page = [
                 'msg_type'         => 'info',
-                'title'            => 'Forbidden',
-                'detail'           => 'Access Denied for your role type',
-                'primary_btn_desc' => 'Home',
-                'primary_btn_url'  => route('home.index'),
+                'title'            => 'Invalid Profession',
+                'detail'           => 'Yout profession is denied by this page',
+                'primary_btn_desc' => 'My Information',
+                'primary_btn_url'  => route('home.member.profile'),
+                'extra_btn_desc'   => 'Home',
+                'extra_btn_url'    => route('home.index'),
             ];
         }
 
@@ -159,10 +163,12 @@ class CheckMemberProfile
         if (! $ret) {
             $this->page = [
                 'msg_type'         => 'info',
-                'title'            => 'Forbidden',
+                'title'            => 'Invalid Personal Machine',
                 'detail'           => 'Access Denied for your machine type',
-                'primary_btn_desc' => 'Home',
-                'primary_btn_url'  => route('home.index'),
+                'primary_btn_desc' => 'My Machine',
+                'primary_btn_url'  => route('home.member.machine'),
+                'extra_btn_desc'   => 'Home',
+                'extra_btn_url'    => route('home.index'),
             ];
         }
 
