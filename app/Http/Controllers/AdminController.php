@@ -8,6 +8,9 @@ class AdminController extends Controller
 {
     public function __construct()
     {
+        if (! App()->isLocal()) {
+            \Debugbar::disable();
+        }
 
     }
 }
