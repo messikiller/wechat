@@ -7,6 +7,8 @@ Route::get('/admin/logout', 'Admin\AuthController@logout')->name('admin.logout')
 Route::namespace('Admin')->middleware('checkAdminLogin')->group(function () {
     Route::get('/admin', 'IndexController@index')->name('admin.index.index');
     Route::get('/admin/index/welcome', 'IndexController@welcome')->name('admin.index.welcome');
+
+    Route::any('/admin/upload/serve', 'UploadController@serve');
 });
 
 Route::namespace('Admin')->middleware('checkAdminLogin', 'checkAdminAcl')->group(function () {
