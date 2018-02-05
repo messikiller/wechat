@@ -42,6 +42,15 @@ body {
     line-height: 56px;
 }
 
+.grid-title {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    white-space: normal;
+}
+
 .footer {
     padding-top: 20px;
     padding-bottom: 20px;

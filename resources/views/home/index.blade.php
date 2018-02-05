@@ -19,7 +19,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-person primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.profile')
         </p>
     </a>
@@ -27,7 +27,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-chat primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.my_repair')
         </p>
     </a>
@@ -35,7 +35,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-earth primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.set_language')
         </p>
     </a>
@@ -43,7 +43,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-chatbox-working primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.repair')
         </p>
     </a>
@@ -51,7 +51,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-laptop primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.my_machine')
         </p>
     </a>
@@ -65,7 +65,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-volume-high primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.ultrasound_doctor')
         </p>
     </a>
@@ -73,7 +73,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-social-instagram primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.endoscope_doctor')
         </p>
     </a>
@@ -81,7 +81,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-contacts primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.distributor_center')
         </p>
     </a>
@@ -95,7 +95,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-ios-paper primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.news')
         </p>
     </a>
@@ -103,7 +103,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-volume-up primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.ultrasound_center')
         </p>
     </a>
@@ -111,7 +111,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-social-instagram-outline primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.endoscope_center')
         </p>
     </a>
@@ -119,7 +119,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-medkit primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.endoscope_maintain')
         </p>
     </a>
@@ -133,7 +133,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-ribbon-b primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.about_us')
         </p>
     </a>
@@ -141,7 +141,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-android-globe primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.global_branch')
         </p>
     </a>
@@ -149,7 +149,7 @@
         <div class="weui-grid__icon text-center">
             <i class="icon ion-social-whatsapp primary-color" style="font-size: 24px;"></i>
         </div>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid-title">
             @lang('index.contact_us')
         </p>
     </a>
