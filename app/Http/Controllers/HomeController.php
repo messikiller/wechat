@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\Auth;
+use Debugbar;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
-        if (! App()->isLocal()) {
-            \Debugbar::disable();
-        }
+        
     }
 }

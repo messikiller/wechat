@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+$api = app('Dingo\Api\Routing\Router');
+
+$api->group(['version' => 'v1', 'namespace' => 'App\\Http\\Controllers\\Api\\'], function ($api) {
+    $api->post('wechat/auth', 'WechatAuthController@store');
+});
+
+$api->group(['version' => 'v1', 'namespace' => 'App\\Http\\Controllers\\Api\\', 'middleware' => ['jwt.auth', 'jwt.refresh']], function ($api) {
+
 });

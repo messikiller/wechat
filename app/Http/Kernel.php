@@ -40,6 +40,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+            
         ],
 
         'home' => [
@@ -83,5 +84,8 @@ class Kernel extends HttpKernel
 
         'checkAdminLogin' => \App\Http\Middleware\CheckAdminLogin::class,
         'checkAdminAcl' => \App\Http\Middleware\CheckAdminAcl::class,
+
+        'jwt.auth' => Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+	    'jwt.refresh' => Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }

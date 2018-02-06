@@ -6,11 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "dingo/api": "2.0.0-alpha1",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "overtrue/laravel-ueditor": "~1.0",
-        "overtrue/laravel-wechat": "~4.0"
+        "overtrue/laravel-wechat": "~4.0",
+        "tymon/jwt-auth": "1.0.0-rc.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -28,6 +30,7 @@
             "App\\": "app/"
         },
         "files": [
+            "app/Helpers/constants.php",
             "app/Helpers/functions.php"
         ]
     },
