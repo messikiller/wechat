@@ -1,21 +1,21 @@
 <?php
 return [
     [
-        "name"       => "Care center",
+        "name"       => "Care Center",
         "sub_button" => [
             [
                 "type" => "view",
-                "name" => "My information",
+                "name" => "My Information",
                 "url"  => env('APP_URL') . '/member/profile'
             ],
             [
                 "type" => "view",
-                "name" => "Doctor center（ES）",
+                "name" => "Doctor Center（ES）",
                 "url"  => env('APP_URL') . '/care/doctor/endoscope'
             ],
             [
                 "type" => "view",
-                "name" => "Doctor center（US）",
+                "name" => "Doctor Center（US）",
                 "url"  => env('APP_URL') . '/care/doctor/ultrasound'
             ],
 
@@ -26,7 +26,7 @@ return [
             ],
             [
                 "type" => "view",
-                "name" => "Distributor center",
+                "name" => "Distributor Center",
                 "url"  => env('APP_URL') . '/care/provider/center'
             ],
         ],
@@ -41,17 +41,17 @@ return [
             ],
             [
                 "type" => "view",
-                "name" => "Ultrasound center",
+                "name" => "Ultrasound Center",
                 "url"  => env('APP_URL') . '/support/ultrasound/center'
             ],
             [
                 "type" => "view",
-                "name" => "Endoscopy center",
+                "name" => "Endoscopy Center",
                 "url"  => env('APP_URL') . '/support/endoscope/center'
             ],
             [
                 "type" => "view",
-                "name" => "Endoscopy maintain",
+                "name" => "Endoscopy Maintain",
                 "url"  => env('APP_URL') . '/support/endoscope/maintain'
             ],
         ],
@@ -76,7 +76,7 @@ return [
             ],
             [
                 "type" => "view",
-                "name" => "Contract us",
+                "name" => "Contact Us",
                 "url"  => env('APP_URL') . '/about/contact'
             ],
         ],
