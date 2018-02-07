@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Dingo\Api\Routing\Helpers;
+use Debugbar;
 
 class ApiController extends Controller
 {
@@ -11,6 +12,6 @@ class ApiController extends Controller
 
     public function __construct()
     {
-
+        Debugbar::disable();
     }
 }

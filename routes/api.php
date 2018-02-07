@@ -14,11 +14,16 @@ use Illuminate\Http\Request;
 */
 
 $api = app('Dingo\Api\Routing\Router');
+$group_v1 = [
+    'version'   => 'v1',
+    'namespace' => 'App\\Http\\Controllers\\Api\\',
+];
 
-$api->group(['version' => 'v1', 'namespace' => 'App\\Http\\Controllers\\Api\\'], function ($api) {
+$api->group($group_v1, function ($api) {
     $api->post('wechat/auth', 'WechatAuthController@store');
+    $api->get('index', 'IndexController@index')->name('api.index.index');
 });
 
-$api->group(['version' => 'v1', 'namespace' => 'App\\Http\\Controllers\\Api\\', 'middleware' => ['jwt.auth', 'jwt.refresh']], function ($api) {
-
+$api->group(array_merge($group_v1, ['middleware' => ['jwt.auth', 'jwt.refresh']]), function ($api) {
+    // $api->get('index', 'IndexController@index');
 });
