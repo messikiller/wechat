@@ -76,7 +76,7 @@ var vm = new Vue({
         formData: {
             machine_type: '{{ $member->machine_type }}',
             machine_sn: '{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}',
-            machine_data: '{{ $member->machine_data }}'
+            machine_data: '{!! $member->machine_data !!}'
         }
     },
     methods: {
