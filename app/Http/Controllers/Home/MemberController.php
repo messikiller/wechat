@@ -17,50 +17,12 @@ class MemberController extends HomeController
         $member_id = Auth::user()->id;
         $member    = Member::find($member_id);
         $regions   = Region::orderBy('created_at', 'desc')->get();
-        
+
         return view('home.member.profile', compact('member', 'regions'));
     }
 
     public function updateProfile(Request $request)
     {
-        $rules = [
-            'type'        => 'required',
-            'nickname'    => 'required',
-            'sex'         => 'required',
-            'mail'        => 'required|email',
-            'mobile'      => 'required|integer',
-            'region_id'   => 'required',
-            'company'     => 'required_if:type,1',
-            'hospital'    => 'required_if:type,0',
-            'address'     => 'required'
-        ];
-
-        $messages = [
-            'type.required'        => 'Role type is required',
-            'nickname.required'    => 'Name is required',
-            'sex.required'         => 'Sex is required',
-            'mail.required'        => 'Mail is required',
-            'mail.email'           => 'Invalid mail',
-            'mobile.required'      => 'Mobile is required',
-            'mobile.integer'       => 'Invalid mobile',
-            'region_id.required'   => 'Region is required',
-            'company.required_if'  => 'Company is required for provider',
-            'hospital.required_if' => 'Hospital is required for doctor',
-            'address.required'     => 'Address is required',
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if ($validator->fails()) {
-            return view('home.common.message', [
-                'msg_type'         => 'info',
-                'title'            => 'Invalid Entry',
-                'detail'           => $validator->errors()->first(),
-                'primary_btn_desc' => 'Profile',
-                'primary_btn_url'  => route('home.member.profile'),
-            ]);
-        }
-
         $wechat_id = Auth::wechat()->getId();
 
         $member = Member::where('wechat_id', '=', $wechat_id)->first();
@@ -77,9 +39,9 @@ class MemberController extends HomeController
         $member->mail         = $request->mail;
         $member->mobile       = $request->mobile;
         $member->region_id    = $request->region_id;
-        $member->company      = $request->company;
-        $member->hospital     = $request->hospital;
-        $member->address      = $request->address;
+        $member->company      = strval($request->company);
+        $member->hospital     = strval($request->hospital);
+        $member->address      = strval($request->address);
         $member->is_completed = config('define.member.is_completed.true.value');
 
         $res = $member->save();
