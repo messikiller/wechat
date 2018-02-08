@@ -12,6 +12,7 @@
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
                 <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
                     @lang('my_machine.machine_type')
                 </label>
             </div>
@@ -29,7 +30,10 @@
         </div>
         <div class="weui-cell weui-cell_vcode">
             <div class="weui-cell__hd">
-                <label class="weui-label">SN</label>
+                <label class="weui-label">
+                    <span class="required">*&nbsp;</span>
+                    SN
+                </label>
             </div>
             <div class="weui-cell__bd">
                 <input class="weui-input" type="text" placeholder="{{ __('my_machine.scan_machine_qrcode') }}" readonly="true" name="machine_sn" v-model="formData.machine_sn"/>
