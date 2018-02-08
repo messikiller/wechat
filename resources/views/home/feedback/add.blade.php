@@ -108,8 +108,8 @@ var vm = new Vue({
                     try {
                         var obj = JSON.parse(res.resultStr);
                         if (typeof obj == 'object' && obj.hasOwnProperty('H')) {
-                            _this.machine_data = res.resultStr;
-                            _this.hsn = obj.H.S;
+                            _this.formData.machine_data = res.resultStr;
+                            _this.formData.hsn = obj.H.S;
                         } else {
                             throw 'failed';
                         }
