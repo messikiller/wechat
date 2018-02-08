@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('content')
-<form action="{{ url()->current() }}" method="post">
+<form action="{{ url()->current() }}" method="post" ref="dataForm">
     {{ csrf_field() }}
 
     <div class="weui-cells__title bar">
@@ -17,7 +17,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" v-model="formData.type">
+                <select class="weui-select" v-model="formData.type" name="type">
                     @foreach (config('define.member.type') as $type)
                         <option value="{{ $type['value'] }}">{{ __($type['trans']) }}</option>
                     @endforeach
@@ -33,7 +33,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" v-model="formData.name"/>
+                <input class="weui-input" type="text" v-model="formData.nickname" name="nickname"/>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" v-model="formData.sex">
+                <select class="weui-select" v-model="formData.sex" name="sex">
                     @foreach (config('define.member.sex') as $sex)
                         <option value="{{ $sex['value'] }}">{{ __($sex['trans']) }}</option>
                     @endforeach
@@ -61,7 +61,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" v-model="formData.mail"/>
+                <input class="weui-input" type="text" v-model="formData.mail" name="mail"/>
             </div>
         </div>
 
@@ -73,7 +73,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="tel" v-model="formData.mobile"/>
+                <input class="weui-input" type="tel" v-model="formData.mobile" name="mobile"/>
             </div>
         </div>
 
@@ -85,7 +85,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" v-model="formData.region_id">
+                <select class="weui-select" v-model="formData.region_id" name="region_id">
                     @foreach ($regions as $region)
                         <option value="{{ $region->id }}">{{ $region->title }}</option>
                     @endforeach
@@ -96,24 +96,24 @@
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
-                    <span class="required" v-show="this.formData.type==this.types.provider">*&nbsp;</span>
+                    <span class="required" v-show="formData.type==types.provider">*&nbsp;</span>
                     @lang('profile.company')
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" v-model="formData.company"/>
+                <input class="weui-input" type="text" v-model="formData.company" name="company"/>
             </div>
         </div>
 
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">
-                    <span class="required" v-show="this.formData.type==this.types.doctor">*&nbsp;</span>
+                    <span class="required" v-show="formData.type==types.doctor">*&nbsp;</span>
                     @lang('profile.hospital')
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" v-model="formData.hospital"/>
+                <input class="weui-input" type="text" v-model="formData.hospital" name="hospital"/>
             </div>
         </div>
 
@@ -125,7 +125,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" v-model="formData.address"/>
+                <input class="weui-input" type="text" v-model="formData.address" name="address"/>
             </div>
         </div>
 
@@ -146,7 +146,7 @@
         <div class="weui-dialog__hd"><strong class="weui-dialog__title">@{{ dialog.title }}</strong></div>
         <div class="weui-dialog__bd">@{{ dialog.info }}</div>
         <div class="weui-dialog__ft">
-            <a href="javascript:;" @click="showDialog=false" class="weui-dialog__btn weui-dialog__btn_primary">OK</a>
+            <a href="javascript:;" @click="showDialog=false" class="weui-dialog__btn weui-dialog__btn_primary primary-color">OK</a>
         </div>
     </div>
 </div>
@@ -163,12 +163,12 @@ var vm = new Vue({
             info: ''
         },
         types: {
-            doctor: '{{ config('define.member.type.docotr.value') }}',
+            doctor: '{{ config('define.member.type.doctor.value') }}',
             provider: '{{ config('define.member.type.provider.value') }}'
-        }
+        },
         formData: {
             type:      '{{ $member->type }}',
-            name:      '{{ $member->name }}',
+            nickname:  '{{ $member->nickname }}',
             sex:       '{{ $member->sex }}',
             mail:      '{{ $member->mail }}',
             mobile:    '{{ $member->mobile }}',
@@ -198,7 +198,7 @@ var vm = new Vue({
                             _res = false;
                             break;
                         }
-                    } else (_obj[k] == '') {
+                    } else if (_obj[k] == '') {
                         _res = false;
                         break;
                     }

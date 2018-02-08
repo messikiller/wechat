@@ -13,8 +13,8 @@ return [
             'female' => ['value' => 1, 'desc' => '女', 'trans' => 'config.female'],
         ],
         'type' => [
-            'provider' => ['value' => 0, 'desc' => '代理商', 'trans' => 'config.doctor'],
-            'doctor'   => ['value' => 1, 'desc' => '医生', 'trans' => 'config.distributor'],
+            'provider' => ['value' => 0, 'desc' => '代理商', 'trans' => 'config.distributor'],
+            'doctor'   => ['value' => 1, 'desc' => '医生', 'trans' => 'config.doctor'],
         ],
         'machine_type' => [
             'default'    => ['value' => 0, 'desc' => '未知', 'trans' => 'config.unknown'],
