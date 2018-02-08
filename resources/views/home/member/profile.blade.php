@@ -183,6 +183,7 @@ var vm = new Vue({
             var _res   = true;
             var _obj   = this.formData;
             var _types = this.types;
+            var _type  = _obj.type;
 
             for (var k in _obj)
             {
