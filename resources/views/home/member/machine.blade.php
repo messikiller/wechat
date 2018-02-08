@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ url()->current() }}" method="post">
+<form action="{{ url()->current() }}" method="post" ref="dataForm">
     {{ csrf_field() }}
 
     <div class="weui-cells__title bar">
@@ -16,7 +16,7 @@
                 </label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="machine_type"  v-model="formCustom.machine_type">
+                <select class="weui-select" name="machine_type"  v-model="formData.machine_type">
                     @foreach (config('define.member.machine_type') as $key => $type)
                         @if ($key == 'default')
                             <option value="{{ $type['value'] }}"></option>
@@ -32,8 +32,8 @@
                 <label class="weui-label">SN</label>
             </div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="{{ __('my_machine.scan_machine_qrcode') }}" ref="snInput" readonly="true" name="machine_sn" value="{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}">
-                <input type="hidden" name="machine_data" ref="machineDataInput" value="{{ $member->machine_data }}">
+                <input class="weui-input" type="text" placeholder="{{ __('my_machine.scan_machine_qrcode') }}" readonly="true" name="machine_sn" v-model="formData.machine_sn"/>
+                <input type="hidden" name="machine_data" v-model="formData.machine_data"/>
             </div>
             <div class="weui-cell__ft">
                 <a href="javascript:;" class="weui-vcode-btn" @click="clickScanBtn"><i class="icon ion-qr-scanner"></i></a>
@@ -42,12 +42,22 @@
     </div>
 
     <div class="weui-btn-area">
-        <button type="submit" class="weui-btn btn-primary">Submit</button>
+        <a href="javascript:;" class="weui-btn btn-primary" @click="clickSubmitBtn">Submit</a>
         <a href="{{ route('home.index') }}" class="weui-btn weui-btn_default">Home</a>
     </div>
 
 </form>
 
+<div v-show="showDialog">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">@{{ dialog.title }}</strong></div>
+        <div class="weui-dialog__bd">@{{ dialog.info }}</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" @click="showDialog=false" class="weui-dialog__btn weui-dialog__btn_primary primary-color">OK</a>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
@@ -58,14 +68,20 @@ var vm = new Vue({
         wx.config({!! $wx_config !!});
     },
     data: {
-        formCustom: {
-            machine_type: '{{ $member->machine_type }}'
+        showDialog: false,
+        dialog: {
+            title: '',
+            info: ''
+        },
+        formData: {
+            machine_type: '{{ $member->machine_type }}',
+            machine_sn: '{{ empty($member->machine_data) ? '' : json_decode($member->machine_data)->H->S }}',
+            machine_data: '{{ $member->machine_data }}'
         }
     },
     methods: {
         clickScanBtn: function () {
-            var _snInput = this.$refs.snInput;
-            var _machineDataInput = this.$refs.machineDataInput;
+            var _formData = this.formData;
             wx.scanQRCode({
                 desc: 'Scan SonoScape SN QRCode',
                 needResult: 1,
@@ -74,8 +90,8 @@ var vm = new Vue({
                     try {
                         var obj = JSON.parse(res.resultStr);
                         if (typeof obj == 'object' && obj.hasOwnProperty('H')) {
-                            _machineDataInput.value = res.resultStr;
-                            _snInput.value = obj.H.S;
+                            _formData.machine_data = res.resultStr;
+                            _formData.machine_sn   = obj.H.S;
                         } else {
                             throw 'failed';
                         }
@@ -87,6 +103,33 @@ var vm = new Vue({
                     alert('Error');
                 }
             });
+        },
+        checkFormInput: function () {
+            var _res   = true;
+            var _obj   = this.formData;
+
+            for (var k in _obj)
+            {
+                if (_obj.hasOwnProperty(k))
+                {
+                    if (_obj[k] == '') {
+                        _res = false;
+                        break;
+                    }
+                }
+            }
+            return _res;
+        },
+        clickSubmitBtn: function () {
+            if (this.checkFormInput()) {
+                this.$refs.dataForm.submit();
+            } else {
+                this.dialog = {
+                    title: 'Notice',
+                    info: 'Make sure the form is complete !'
+                };
+                this.showDialog = true;
+            }
         }
     }
 });

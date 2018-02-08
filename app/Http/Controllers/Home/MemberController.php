@@ -84,16 +84,6 @@ class MemberController extends HomeController
         $machine_sn   = $request->machine_sn;
         $machine_data = $request->machine_data;
 
-        if (empty($machine_type) || empty($machine_sn) || empty($machine_data)) {
-            return view('home.common.message', [
-                'msg_type'         => 'info',
-                'title'            => 'Invalid',
-                'detail'           => 'please fill form completely',
-                'primary_btn_desc' => 'Back',
-                'primary_btn_url'  => route('home.member.machine'),
-            ]);
-        }
-
         $member_id = Auth::user()->id;
         $member    = Member::find($member_id);
 
