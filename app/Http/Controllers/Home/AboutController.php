@@ -9,16 +9,16 @@ class AboutController extends HomeController
 {
     public function us()
     {
-        return 'About Us';
+        return 'About Us (Maintaining...)';
     }
 
     public function globe()
     {
-        return 'Global Branches';
+        return 'Global Branches (Maintaining...)';
     }
 
     public function contact()
     {
-        return 'Contact Us';
+        return 'Contact Us (Maintaining...)';
     }
 }
