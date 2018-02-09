@@ -37,6 +37,22 @@ mix
     ], 'public/js/admin.js')
     .copy('semantic/dist/themes/', 'public/css/themes/')
 
+    // begin log viewer assets
+    .styles([
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'node_modules/font-awesome/css/font-awesome.min.css',
+        'node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+    ], 'public/css/log-viewer.css')
+    .scripts([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/jquery-migrate/dist/jquery-migrate.min.js ',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/moment/min/moment-with-locales.min.js',
+        'node_modules/chart.js/dist/Chart.min.js',
+        'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
+    ], 'public/js/log-viewer.js')
+    .copy('node_modules/font-awesome/fonts/*', 'public/fonts/')
+    .copy('node_modules/bootstrap/fonts/*', 'public/fonts/')
 
 ;
    // .sass('resources/assets/sass/app.scss', 'public/css');
