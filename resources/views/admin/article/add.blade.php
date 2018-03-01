@@ -45,14 +45,14 @@
                                     ref="coverUploader"
                                     :headers="{'X-CSRF-TOKEN': '{{ csrf_token() }}' }"
                                     :format="['jpg','jpeg','png']"
-                                    :max-size="10240"
+                                    :max-size="2048"
                                     :on-format-error="handleCoverFormatError"
                                     :on-exceeded-size="handleCoverMaxSize"
                                     :on-error="handleCoverError"
                                     :on-success="handleCoverSuccess"
                                 >
                                     <i-button type="ghost" icon="camera">上传图片</i-button>
-                                    (最大不超过10M，允许格式：jpg, jpeg, png)
+                                    (最大不超过2M，允许格式：jpg, jpeg, png)
                                 </Upload>
                             </div>
                             <div>
