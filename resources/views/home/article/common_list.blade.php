@@ -6,7 +6,13 @@
         <div class="weui-panel__bd">
 
             @foreach($articles as $article)
-                <a href="{{ route('home.index.article', $article->id) }}" class="weui-media-box weui-media-box_appmsg">
+                <a href="
+                    @if ($article->type == config('define.article.type.link.value'))
+                        {{ $article->content }}
+                    @else
+                        {{ route('home.index.article', $article->id) }}
+                    @endif
+                " class="weui-media-box weui-media-box_appmsg">
                     <div class="weui-media-box__hd">
                         <img class="weui-media-box__thumb" src="{{ $article->cover }}" width="100%" height="100%">
                     </div>

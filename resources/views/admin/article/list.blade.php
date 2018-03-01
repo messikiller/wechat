@@ -21,6 +21,18 @@
 
             <i-col span="4">
                 <i-form :label-width="100">
+                    <Form-item label="类型" prop="type">
+                        <i-select size="small" v-model="filterCustom.type">
+                            @foreach (config('define.article.type') as $type)
+                                <i-option value="{{ $type['value'] }}">{{ $type['desc'] }}</i-option>
+                            @endforeach
+                        </i-select>
+                    </Form-item>
+                </i-form>
+            </i-col>
+
+            <i-col span="4">
+                <i-form :label-width="100">
                     <Form-item label="栏目" prop="album">
                         <i-select size="small" v-model="filterCustom.album">
                             @foreach (config('define.article.album') as $album)
@@ -70,12 +82,14 @@ var vm = new Vue({
     data: {
         filterCustom: {
             title: '{{ isset($filter['filter_title']) ? $filter['filter_title'] : '' }}',
+            type: '{{ isset($filter['filter_type']) ? $filter['filter_type'] : '' }}',
             album: '{{ isset($filter['filter_album']) ? $filter['filter_album'] : '' }}',
             status: '{{ isset($filter['filter_status']) ? $filter['filter_status'] : '' }}'
         },
         header: [
             {title: '#',       key: 'index', width: '100'},
-            {title: '标题', key: 'title'},
+            {title: '标题',    key: 'title'},
+            {title: '类型',    key: 'type_desc'},
             {title: '栏目',    key: 'album_title'},
             {title: '状态',    key: 'status_desc'},
             {title: '创建时间', key: 'created_at'},
@@ -103,6 +117,12 @@ var vm = new Vue({
             {
                 'index': '{{ $list->perPage() * ($list->currentPage() - 1) + $loop->iteration }}',
                 'title': '{{ $article->title }}',
+                @foreach (config('define.article.type') as $type)
+                    @if ($type['value'] == $article->type)
+                        'type_desc': '{{ $type['desc'] }}',
+                        @break
+                    @endif
+                @endforeach
                 @foreach (config('define.article.album') as $album)
                     @if ($album['value'] == $article->album)
                         'album_title': '{{ $album['desc'] }}',

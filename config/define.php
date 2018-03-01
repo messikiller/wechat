@@ -51,6 +51,10 @@ return [
     ],
 
     'article' => [
+        'type' => [
+            'normal' => ['value' => 0, 'desc' => '普通文章'],
+            'link'   => ['value' => 1, 'desc' => '跳转链接'],
+        ],
         'album' => [
             'doctor_center_es'   => ['value' => 1, 'desc' => '医生中心（内窥镜）'],
             'doctor_center_us'   => ['value' => 2, 'desc' => '医生中心（超声）'],

@@ -25,12 +25,24 @@
                 </Row>
                 <Row>
                     <i-col span="12">
+                        <Form-item label="类型" prop="type" required>
+                            <i-select v-model="formCustom.type">
+                                @foreach (config('define.article.type') as $type)
+                                    <i-option value="{{ $type['value'] }}">{{ $type['desc'] }}</i-option>
+                                @endforeach
+                            </i-select>
+                            <input type="hidden" name="type" v-model="formCustom.type">
+                        </Form-item>
+                    </i-col>
+                </Row>
+                <Row>
+                    <i-col span="12">
                         <Form-item label="栏目" prop="album" required>
-                                <i-select v-model="formCustom.album">
-                                    @foreach (config('define.article.album') as $album)
-                                        <i-option value="{{ $album['value'] }}">{{ $album['desc'] }}</i-option>
-                                    @endforeach
-                                </i-select>
+                            <i-select v-model="formCustom.album">
+                                @foreach (config('define.article.album') as $album)
+                                    <i-option value="{{ $album['value'] }}">{{ $album['desc'] }}</i-option>
+                                @endforeach
+                            </i-select>
                             <input type="hidden" name="album" v-model="formCustom.album">
                         </Form-item>
                     </i-col>
@@ -66,11 +78,11 @@
                 <Row>
                     <i-col span="12">
                         <Form-item label="状态" prop="status" required>
-                                <i-select v-model="formCustom.status">
-                                    @foreach (config('define.article.status') as $status)
-                                        <i-option value="{{ $status['value'] }}">{{ $status['desc'] }}</i-option>
-                                    @endforeach
-                                </i-select>
+                            <i-select v-model="formCustom.status">
+                                @foreach (config('define.article.status') as $status)
+                                    <i-option value="{{ $status['value'] }}">{{ $status['desc'] }}</i-option>
+                                @endforeach
+                            </i-select>
                             <input type="hidden" name="status" v-model="formCustom.status">
                         </Form-item>
                     </i-col>
@@ -84,6 +96,7 @@
                 </Row>
                 <Form-item label="内容" prop="content" required>
                     <script id="container" name="content" type="text/plain"></script>
+                    <input type="hidden" name="plainContent" ref="plainContentInput">
                 </Form-item>
                 <Form-item>
                     <i-button type="primary" @click="handleSubmit">提交</i-button>
@@ -102,7 +115,7 @@
 window.EDITOR = UE.getEditor('container', {
     zIndex: 1
 });
-new Vue({
+var vm = new Vue({
     el: '#app',
     data () {
         const validateGeneral = (rule, value, callback) => {
@@ -118,6 +131,7 @@ new Vue({
             formCustom: {
                 title: '',
                 album: '',
+                type: '{{ config('define.article.type.normal.value') }}',
                 cover: '',
                 status: '{{ config('define.article.status.normal.value') }}',
                 abstract: '',
@@ -173,6 +187,7 @@ new Vue({
             this.showCoverUploader = true;
         },
         handleSubmit: function () {
+            this.$refs.plainContentInput.value = EDITOR.getPlainTxt();
             this.$refs.dataForm.validate((valid) => {
                 if (valid && EDITOR.hasContents() && this.formCustom.cover != '') {
                     this.$refs.dataForm.$el.submit();

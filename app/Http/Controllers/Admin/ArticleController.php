@@ -14,6 +14,11 @@ class ArticleController extends AdminController
         $pagesize = 20;
         $filter   = $where = [];
 
+        if (($filter_type = $request->input('filter_type', false)) !== false) {
+            $filter['filter_type'] = $filter_type;
+            $where['type']         = $filter_type;
+        }
+
         if (($filter_album = $request->input('filter_album', false)) !== false) {
             $filter['filter_album'] = $filter_album;
             $where['album']         = $filter_album;
@@ -52,11 +57,12 @@ class ArticleController extends AdminController
         $article = new Article;
 
         $article->title      = $request->title;
+        $article->type       = $request->type;
         $article->album      = $request->album;
         $article->status     = $request->status;
         $article->cover      = $request->cover;
         $article->abstract   = $request->abstract;
-        $article->content    = $request->content;
+        $article->content    = $request->type == config('define.article.type.link.value') ? $request->plainContent : $request->content;
         $article->created_at = time();
 
         $res = $article->save();
@@ -83,11 +89,12 @@ class ArticleController extends AdminController
         $article = Article::find($id);
 
         $article->title    = $request->title;
+        $article->type     = $request->type;
         $article->album    = $request->album;
         $article->status   = $request->status;
         $article->cover    = $request->cover;
         $article->abstract = $request->abstract;
-        $article->content  = $request->content;
+        $article->content  = $request->type == config('define.article.type.link.value') ? $request->plainContent : $request->content;
 
         $res = $article->save();
         if ($res === false) {
