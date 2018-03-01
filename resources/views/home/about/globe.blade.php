@@ -75,6 +75,65 @@
         <span style=";font-family:Helvetica;color:rgb(62,62,62);font-size:16px">ATTN: Gordon Gao</span>
     </p>
     <p>
+    <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px"></span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px"></span>
+    </p>
+    <p>
+        <br/>
+    </p>
+    <hr/>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px"></span><br/>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px">Shenzhen</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(62,62,62);font-size:16px">518051 ShenZhen China 10/F,YiZhe Building Yuquan Road&nbsp;</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(62,62,62);font-size:16px">Tel:+86-755-26409394</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(62,62,62);font-size:16px">Mobile:+86 13715141837</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px">ATTN:Albert WANG</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px"><br/></span>
+    </p>
+    <hr/>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px"><br/></span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px">Netherlands</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(62,62,62);font-size:16px;background:rgb(255,255,255)">Boeingavenue 8, 1119 PB Schiphol-Rijk</span>
+    </p>
+    <p>
+        <span style="font-family: Helvetica;font-size: 16px">Tel: 86-755-26722890 Ext: 5608</span>
+    </p>
+    <p>
+        <span style="font-family: Helvetica;font-size: 16px">Mobile:+86-186-6801-6120</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px;background:rgb(255,255,255)">ATTN:Pimkie LIU</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px;background:rgb(255,255,255)"><br/></span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(34,34,34);font-size:16px">More Customer Service Center are under construction!</span>
+    </p>
+    <p>
+        <span style=";font-family:Helvetica;color:rgb(62,62,62);font-size:16px"></span><br/>
+    </p>
+    <p>
         <br/>
     </p>
 </body>
