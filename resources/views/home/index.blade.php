@@ -6,7 +6,7 @@
     <div class="userinfo">
         {{ empty($wechat) ? 'unknown' : optional($wechat)->getNickname() }}
         @if (! $user->is_completed)
-            <span class="weui-badge">未完善</span>
+            <span class="weui-badge">unfinished</span>
         @endif
     </div>
 </div>

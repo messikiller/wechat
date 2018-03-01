@@ -86,7 +86,7 @@
                                         <td>{{ $machine_data['hversion'] }}</td>
                                     </tr>
                                     <tr>
-                                        <td>晶体</td>
+                                        <td>镜体</td>
                                         <td>{{ $machine_data['esn'] }}</td>
                                         <td>{{ $machine_data['ecdkey'] }}</td>
                                         <td>{{ $machine_data['emodel'] }}</td>

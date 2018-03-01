@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AdminController;
 use App\Models\Article;
+use Debugbar;
 
 class ArticleController extends AdminController
 {
@@ -53,6 +54,8 @@ class ArticleController extends AdminController
         $article->title      = $request->title;
         $article->album      = $request->album;
         $article->status     = $request->status;
+        $article->cover      = $request->cover;
+        $article->abstract   = $request->abstract;
         $article->content    = $request->content;
         $article->created_at = time();
 
@@ -79,10 +82,12 @@ class ArticleController extends AdminController
     {
         $article = Article::find($id);
 
-        $article->title   = $request->title;
-        $article->album   = $request->album;
-        $article->status  = $request->status;
-        $article->content = $request->content;
+        $article->title    = $request->title;
+        $article->album    = $request->album;
+        $article->status   = $request->status;
+        $article->cover    = $request->cover;
+        $article->abstract = $request->abstract;
+        $article->content  = $request->content;
 
         $res = $article->save();
         if ($res === false) {
@@ -93,6 +98,18 @@ class ArticleController extends AdminController
 
         return back()->with('errors', [
             ['type' => 'success', 'desc' => '文章更新成功！']
+        ]);
+    }
+
+    public function uploadCover(Request $request)
+    {
+        $path      = $request->file('coverFile')->store('public/cover');
+        $filename  = basename($path);
+        $cover_src = "/storage/cover/{$filename}";
+
+        return response()->json([
+            'status'    => 200,
+            'cover_src' => $cover_src
         ]);
     }
 }
