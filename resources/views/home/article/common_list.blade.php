@@ -1,24 +1,26 @@
 @extends('layouts.home')
 
 @section('content')
-    <div class="weui-cells__title bar">{{ $detail }}</div>
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__hd">{{ $detail }}</div>
+        <div class="weui-panel__bd">
 
-    @if ($articles->count() == 0)
-        <article class="weui-article">
-            <p>Maintaining ...</p>
-        </article>
-    @endif
+            @foreach($articles as $article)
+                <a href="{{ route('home.index.article', $article->id) }}" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="{{ $article->cover }}" width="100%" height="100%">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">{{ $article->title }}</h4>
+                        <p class="weui-media-box__desc">{{ $article->abstract }}</p>
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">{{ date('Y-m-d', $article->created_at) }}</li>
+                        </ul>
+                    </div>
+                </a>
+            @endforeach
 
-    <div class="weui-cells">
-        @foreach ($articles as $article)
-            <a class="weui-cell weui-cell_access" href="{{ route('home.index.article', $article->id) }}">
-                <div class="weui-cell__hd"><i class="icon ion-ios-paper primary-color"></i>&ensp;</div>
-                <div class="weui-cell__bd">
-                    <p>{{ str_limit($article->title, 20) }}</p>
-                </div>
-                <div class="weui-cell__ft">{{ date('Y-m-d', $article->created_at) }}</div>
-            </a>
-        @endforeach
+        </div>
     </div>
 
     <div class="weui-btn-area">
