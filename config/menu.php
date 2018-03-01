@@ -79,6 +79,11 @@ return [
                 "name" => "Contact Us",
                 "url"  => env('APP_URL') . '/about/contact'
             ],
+            [
+                "type" => "view",
+                "name" => "Language",
+                "url"  => env('APP_URL') . '/system/language'
+            ],
         ],
     ],
 ];
