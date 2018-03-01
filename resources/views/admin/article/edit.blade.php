@@ -56,7 +56,7 @@
                                 </Upload>
                             </div>
                             <div>
-                                <img :src="formCustom.cover" v-show="!showCoverUploader">
+                                <img :src="formCustom.cover" v-show="!showCoverUploader" height="150">
                             </div>
                             <i-button type="error" icon="ios-trash-outline" v-show="!showCoverUploader" @click="handleRemoveUploadedCover">删除</i-button>
                             <input type="hidden" name="cover" v-model="formCustom.cover">
