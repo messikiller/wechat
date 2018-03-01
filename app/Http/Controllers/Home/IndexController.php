@@ -19,8 +19,15 @@ class IndexController extends HomeController
 
     public function viewArticle($id)
     {
-        $article = Article::find($id);
-        
-        return view('home.article.common_view', compact('article'));
+        $article   = Article::find($id);
+        $wx_config = EasyWeChat::officialAccount()->jssdk->buildConfig([
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'onMenuShareQZone'
+        ], false);
+
+        return view('home.article.common_view', compact('article', 'wx_config'));
     }
 }
