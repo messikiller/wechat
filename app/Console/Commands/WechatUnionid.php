@@ -48,7 +48,7 @@ class WechatUnionid extends Command
                 break;
             }
 
-            $user    = $app->user->get($openid);
+            $user    = $app->user->get($input);
             $unionid = isset($user['unionid']) ? $user['unionid'] : 'Not Found !!!';
 
             $this->info("union id: {$unionid}");
