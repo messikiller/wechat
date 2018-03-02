@@ -19,7 +19,7 @@ class WechatMenu extends Command
      *
      * @var string
      */
-    protected $description = 'Update Wechat Menu';
+    protected $description = 'update wechat official account menu';
 
     /**
      * Create a new command instance.

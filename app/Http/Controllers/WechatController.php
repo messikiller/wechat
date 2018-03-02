@@ -26,11 +26,14 @@ class WechatController extends Controller
         $user  = $oauth->user();
 
         $wechat_id = $user->getId();
+        $original  = $user->getOriginal();
+        $union_id  = $original['unionid'];
 
-        $member = Member::where('wechat_id', '=', $wechat_id)->first();
+        $member = Member::where('union_id', '=', $union_id)->first();
         if (empty($member)) {
             $member = Member::create([
                 'wechat_id'    => $wechat_id,
+                'union_id'     => $union_id,
                 'machine_data' => '',
                 'config'       => '',
                 'created_at'   => time()
