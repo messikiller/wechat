@@ -28,9 +28,12 @@ class Auth
     public static function reload()
     {
         $user = self::wechat();
-        $wechat_id = $user->getId();
 
-        $member = Member::where('wechat_id', '=', $wechat_id)->first();
+        $wechat_id = $user->getId();
+        $original  = $user->getOriginal();
+        $union_id  = $original['unionid'];
+
+        $member = Member::where('union_id', '=', $union_id)->first();
         $member->setAttribute('wechat', $user);
 
         self::set($member);
