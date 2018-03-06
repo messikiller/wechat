@@ -9,7 +9,7 @@ class AboutController extends HomeController
 {
     public function us()
     {
-        return 'About Us (Maintaining...)';
+        return view('home.about.us');
     }
 
     public function globe()
