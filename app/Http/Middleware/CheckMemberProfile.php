@@ -30,7 +30,7 @@ class CheckMemberProfile
         $member = Auth::user();
         $rules  = explode('-', $rule);
 
-        if (App()->isLocal()) {
+        if (App()->isLocal() || in_array($member->wechat_id, config('supermen'))) {
             return $next($request);
         }
 
