@@ -51,4 +51,16 @@ class SupportController extends HomeController
 
         return view('home.article.common_list', compact('detail', 'articles'));
     }
+
+    public function engineer()
+    {
+        $detail = 'Engineer Area';
+
+        $articles = Article::published()
+            ->where('album', '=', config('define.article.album.engineer.value'))
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('home.article.common_list', compact('detail', 'articles'));
+    }
 }

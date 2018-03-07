@@ -63,6 +63,7 @@ return [
             'ultrasound_center'  => ['value' => 5, 'desc' => '超声中心'],
             'endoscopy_center'   => ['value' => 6, 'desc' => '内窥镜中心'],
             'endoscopy_maintain' => ['value' => 7, 'desc' => '内窥镜保养'],
+            'engineer'           => ['value' => 8, 'desc' => '工程师专区（隐藏）'],
         ],
         'status' => [
             'normal' => ['value' => 0, 'desc' => '正常'],

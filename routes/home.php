@@ -30,6 +30,8 @@ Route::namespace('Home')->middleware('wechat', 'checkLocale')->group(function ()
     Route::get('/support/ultrasound/center', 'SupportController@ultrasound')->middleware('checkMemberProfile:T|D|U-T|P|U')->name('home.support.ultrasound');
     Route::get('/support/endoscope/center', 'SupportController@endoscope')->middleware('checkMemberProfile:T|D|E-T|P|E')->name('home.support.endoscope');
     Route::get('/support/endoscope/maintain', 'SupportController@endoMaintain')->middleware('checkMemberProfile:T|D|E-T|P|E')->name('home.support.endoMaintain');
+    // for own engineer, hide in home index page
+    Route::get('/support/engineer', 'SupportController@engineer')->name('home.support.engineer');
 
     Route::get('/about/us', 'AboutController@us')->name('home.about.us');
     Route::get('/about/globe', 'AboutController@globe')->middleware('checkMemberProfile:T|D|U-T|P|U-T|D|E-T|P|E')->name('home.about.globe');
