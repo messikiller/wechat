@@ -2,7 +2,7 @@
 return [
     'user_session_key' => 'user',
     'user_locale_session' => 'locale',
-    'engineer_keypass' => 'sonoscape',
+    'engineer_keypass' => env('ENGINEER_KEYPASS', 'sonoscape'),
 
     'member' => [
         'is_completed' => [
