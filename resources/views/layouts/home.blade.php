@@ -109,6 +109,9 @@ body {
     color: #03a099;
 }
 </style>
+
+@yield('style')
+
 </head>
 <body>
     <div id="app">

@@ -30,6 +30,6 @@
     </div>
 
     <div class="weui-btn-area">
-        <a href="{{ route('home.index') }}" @click="clickSubmitBtn" class="weui-btn btn-primary">Home</a>
+        <a href="{{ route('home.index') }}" class="weui-btn btn-primary">Home</a>
     </div>
 @endsection

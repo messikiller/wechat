@@ -61,6 +61,6 @@ class SupportController extends HomeController
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('home.article.common_list', compact('detail', 'articles'));
+        return view('home.article.engineer', compact('detail', 'articles'));
     }
 }
