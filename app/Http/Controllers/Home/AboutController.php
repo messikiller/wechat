@@ -14,7 +14,7 @@ class AboutController extends HomeController
 
     public function globe()
     {
-        return view('home.about.globe');
+        return 'Global Branch (Maintaining...)';
     }
 
     public function contact()
